@@ -1,0 +1,93 @@
+# Required. Python modules that contain orca registrations.  Omit the '.py'
+orca_modules:
+    - lcog.datasources
+    - lcog.variables
+    - lcog.models
+
+# Required. Links to data files that will be downloaded into ./data
+data_files:
+    -
+        storage: public
+        url: https://storage.googleapis.com/urbansim/parcel_model/lcog/data/model_data.h5
+        filename: ./data/model_data.h5
+
+# Optional. Orca steps that run prior to the simulation.
+orca_preprocessing_steps:
+    - build_networks
+    - generate_indicators
+
+# Optional. Simulation steps that will be executed for the first simulation year.
+orca_simulation_steps_first_year:
+
+# Required. Orca steps that run on each simulation year.
+# If orca_simulation_steps_first_year is present then these steps will not be
+# executed on first year but other listed on previously mentioned section.
+orca_simulation_steps:
+    # Transition models
+    - household_transition
+    - job_transition
+
+    # Price models
+    - repm_sf_detached
+    - repm_duplex_townhome
+    - repm_multifamily
+    - repm_industrial
+    - repm_retail
+    - repm_office
+
+    # Developer models
+    - feasibility
+    - residential_developer
+    - non_residential_developer
+
+    # Location models
+    - hlcm1
+    - hlcm2
+    - elcm1
+    - elcm2
+    - elcm3
+    - elcm4
+    - elcm5
+    - elcm6
+    - elcm7
+    - elcm8
+    - elcm9
+    - elcm10
+    - elcm11
+    - elcm12
+    - elcm13
+    - elcm14
+
+    # End of year models
+    - generate_indicators
+
+# Optional. Orca steps that run after the simulation.
+orca_postprocessing_steps:
+
+# Model manager module
+model_manager: true
+
+# Simulation years to run
+simulation_years:
+    start: 2011
+    end: 2036
+    step: 1
+
+orca_injectables:
+    - forecast_year: 2035
+
+output_storage:
+    provider: gcs
+    project: urbansim-cloud
+    bucket: urbansim_models
+    path: results/lcog
+
+# Region/MPO ID
+region_id: 41197300
+
+model_description: LCOG Cloud Simulation
+
+redis:
+    host: redis
+    port: 6379
+    sleep_time: 200000

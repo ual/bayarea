@@ -1,0 +1,66 @@
+modelmanager_version: 0.1.dev15
+
+saved_object:
+    alt_capacity: residential_units
+    alt_filters: residential_units > 0
+    alt_sample_size: 30
+    alternatives: buildings
+    choice_column: building_id
+    chooser_filters:
+    - (recent_mover == 1) & (income_quartile == 1)
+    chooser_sample_size: null
+    chooser_size: null
+    choosers: households
+    constrained_choices: true
+    fitted_parameters:
+    - -0.08471120272351385
+    - 1.1521908076105094
+    - 0.029245077773077326
+    - -0.050853290394375875
+    - 2.044005439823205
+    - -3.1240122170652715
+    - 3.766869176451
+    - 17.15495771663326
+    - 0.1659128239524059
+    - 0.2758051443886828
+    max_iter: null
+    model_expression: ln_value_per_unit + is_multifamily + blocks_mean_residential_units
+        + ln_locations_mean_non_residential_sqft + ln_zone_subdistricts_prop_sector_id_4
+        + parcels_prop_tenure_1 + zones_prop_income_quartile_1 + hispanic_head:ln_zones_prop_hispanic_head_1
+        + workers:ln_zones_total_jobs_5_am_peak_travel_time + no_workers:ln_zones_total_jobs_5_am_peak_travel_time
+        - 1
+    name: hlcm1
+    out_alt_filters: null
+    out_alternatives: null
+    out_chooser_filters:
+    - building_id == -1
+    - income_quartile == 1
+    out_choosers: null
+    out_column: building_id
+    summary_table: "                  CHOICEMODELS ESTIMATION RESULTS            \
+        \      \n===================================================================\n\
+        Dep. Var.:                chosen   No. Observations:            656\nModel:\
+        \         Multinomial Logit   Df Residuals:                646\nMethod:  \
+        \     Maximum Likelihood   Df Model:                     10\nDate:       \
+        \          2018-11-20   Pseudo R-squ.:             0.410\nTime:          \
+        \            15:21   Pseudo R-bar-squ.:         0.406\nAIC:              \
+        \     2,651.044   Log-Likelihood:       -1,315.522\nBIC:                 \
+        \  2,695.906   LL-Null:              -2,231.185\n=========================================================================================================\n\
+        \                                                          coef   std err\
+        \         z     P>|z|   Conf. Int.\n---------------------------------------------------------------------------------------------------------\n\
+        ln_value_per_unit                                      -0.0847     0.031 \
+        \   -2.747     0.006             \nis_multifamily                        \
+        \                  1.1522     0.117     9.825     0.000             \nblocks_mean_residential_units\
+        \                           0.0292     0.003     9.711     0.000         \
+        \    \nln_locations_mean_non_residential_sqft                 -0.0509    \
+        \ 0.051    -0.988     0.323             \nln_zone_subdistricts_prop_sector_id_4\
+        \                   2.0440     0.308     6.645     0.000             \nparcels_prop_tenure_1\
+        \                                  -3.1240     0.243   -12.852     0.000 \
+        \            \nzones_prop_income_quartile_1                            3.7669\
+        \     0.457     8.237     0.000             \nhispanic_head:ln_zones_prop_hispanic_head_1\
+        \            17.1550     5.886     2.915     0.004             \nworkers:ln_zones_total_jobs_5_am_peak_travel_time\
+        \       0.1659     0.014    12.205     0.000             \nno_workers:ln_zones_total_jobs_5_am_peak_travel_time\
+        \    0.2758     0.019    14.717     0.000             \n========================================================================================================="
+    tags: []
+    template: LargeMultinomialLogitStep
+    template_version: 0.1.dev15

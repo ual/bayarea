@@ -1,0 +1,39 @@
+modelmanager_version: 0.1.dev15
+
+saved_object:
+    filters:
+    - income_quartile == 2
+    fitted_parameters:
+    - -16.520692014511294
+    - 3.800603440954399
+    - 2.186539568417616
+    model_expression: tenure_own ~ ln_age_of_head + ln_cars + 1
+    name: tenure_choice_model2
+    out_column: tenure
+    out_filters:
+    - building_id == -1
+    - income_quartile == 2
+    out_tables: households
+    out_transform: null
+    out_value_false: 2
+    out_value_true: 1
+    summary_table: "                           Logit Regression Results          \
+        \                 \n==============================================================================\n\
+        Dep. Variable:             tenure_own   No. Observations:                \
+        \  798\nModel:                          Logit   Df Residuals:            \
+        \          795\nMethod:                           MLE   Df Model:        \
+        \                    2\nDate:                Thu, 13 Dec 2018   Pseudo R-squ.:\
+        \                  0.2855\nTime:                        15:35:20   Log-Likelihood:\
+        \                -379.61\nconverged:                       True   LL-Null:\
+        \                       -531.25\n                                        LLR\
+        \ p-value:                 1.381e-66\n==================================================================================\n\
+        \                     coef    std err          z      P>|z|      [0.025  \
+        \    0.975]\n----------------------------------------------------------------------------------\n\
+        Intercept        -16.5207      1.240    -13.324      0.000     -18.951   \
+        \  -14.090\nln_age_of_head     3.8006      0.288     13.217      0.000   \
+        \    3.237       4.364\nln_cars            2.1865      0.270      8.091  \
+        \    0.000       1.657       2.716\n=================================================================================="
+    tables: households_pums
+    tags: []
+    template: BinaryLogitStep
+    template_version: 0.1.dev15

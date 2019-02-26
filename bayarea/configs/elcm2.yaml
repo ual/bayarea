@@ -1,0 +1,66 @@
+modelmanager_version: 0.1.dev15
+
+saved_object:
+    alt_capacity: job_spaces
+    alt_filters: null
+    alt_sample_size: 30
+    alternatives: buildings
+    choice_column: building_id
+    chooser_filters:
+    - sector_id == 2
+    chooser_sample_size: null
+    chooser_size: null
+    choosers: jobs
+    constrained_choices: true
+    fitted_parameters:
+    - 11.924484305184073
+    - 2.4239393707002104
+    - -2.005510907109967e-05
+    - -0.18369622640402675
+    - 5.3595612107707265e-05
+    - 0.5148844607039399
+    - 0.58138773134254
+    - 2.485467690603622
+    - 2.16898750998066
+    - -0.012503679775177187
+    max_iter: null
+    model_expression: ln_block_groups_prop_sector_id_2 + ln_blocks_prop_building_type_id_4200
+        + zones_sum_persons_5_md_offpeak_travel_time + ln_blocks_density_households
+        + zones_total_jobs_5_md_offpeak_travel_time + ln_parcels_density_jobs + ln_non_residential_sqft
+        + ln_parcels_prop_building_type_id_1220 + parcels_mean_income_ave_2000_flat
+        + blocks_mean_year_built - 1
+    name: elcm2
+    out_alt_filters: null
+    out_alternatives: null
+    out_chooser_filters:
+    - building_id == -1
+    - sector_id == 2
+    out_choosers: null
+    out_column: building_id
+    summary_table: "                  CHOICEMODELS ESTIMATION RESULTS            \
+        \      \n===================================================================\n\
+        Dep. Var.:                chosen   No. Observations:          1,296\nModel:\
+        \         Multinomial Logit   Df Residuals:              1,286\nMethod:  \
+        \     Maximum Likelihood   Df Model:                     10\nDate:       \
+        \          2018-11-20   Pseudo R-squ.:             0.840\nTime:          \
+        \            15:22   Pseudo R-bar-squ.:         0.838\nAIC:              \
+        \     1,429.052   Log-Likelihood:         -704.526\nBIC:                 \
+        \  1,480.722   LL-Null:              -4,407.952\n===============================================================================================\n\
+        \                                                coef   std err         z\
+        \     P>|z|   Conf. Int.\n-----------------------------------------------------------------------------------------------\n\
+        ln_block_groups_prop_sector_id_2             11.9245     1.066    11.185 \
+        \    0.000             \nln_blocks_prop_building_type_id_4200          2.4239\
+        \     0.440     5.504     0.000             \nzones_sum_persons_5_md_offpeak_travel_time\
+        \   -0.0000     0.000    -1.692     0.091             \nln_blocks_density_households\
+        \                 -0.1837     0.113    -1.631     0.103             \nzones_total_jobs_5_md_offpeak_travel_time\
+        \     0.0001     0.000     7.702     0.000             \nln_parcels_density_jobs\
+        \                       0.5149     0.056     9.127     0.000             \n\
+        ln_non_residential_sqft                       0.5814     0.019    30.720 \
+        \    0.000             \nln_parcels_prop_building_type_id_1220         2.4855\
+        \     0.683     3.638     0.000             \nparcels_mean_income_ave_2000_flat\
+        \             2.1690     0.306     7.083     0.000             \nblocks_mean_year_built\
+        \                       -0.0125     0.002    -7.286     0.000            \
+        \ \n==============================================================================================="
+    tags: []
+    template: LargeMultinomialLogitStep
+    template_version: 0.1.dev15

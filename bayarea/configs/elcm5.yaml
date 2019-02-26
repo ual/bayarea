@@ -1,0 +1,56 @@
+modelmanager_version: 0.1.dev15
+
+saved_object:
+    alt_capacity: job_spaces
+    alt_filters: null
+    alt_sample_size: 30
+    alternatives: buildings
+    choice_column: building_id
+    chooser_filters:
+    - sector_id == 5
+    chooser_sample_size: 2000
+    chooser_size: null
+    choosers: jobs
+    constrained_choices: true
+    fitted_parameters:
+    - 1.3249491214091944
+    - -3.204028583942054
+    - 0.007125306436183526
+    - -1.694146750503001
+    - -3.2077143391869396
+    - 2.2825163626521103
+    max_iter: null
+    model_expression: ln_parcels_ratio_jobs_to_households + is_warehouse + blocks_mean_year_built
+        + blocks_prop_sector_id_11 + blocks_prop_sector_id_6 + ln_parcels_mean_non_residential_sqft_ave_400_flat
+        - 1
+    name: elcm5
+    out_alt_filters: null
+    out_alternatives: null
+    out_chooser_filters:
+    - building_id == -1
+    - sector_id == 5
+    out_choosers: null
+    out_column: building_id
+    summary_table: "                  CHOICEMODELS ESTIMATION RESULTS            \
+        \      \n===================================================================\n\
+        Dep. Var.:                chosen   No. Observations:          2,000\nModel:\
+        \         Multinomial Logit   Df Residuals:              1,994\nMethod:  \
+        \     Maximum Likelihood   Df Model:                      6\nDate:       \
+        \          2018-11-20   Pseudo R-squ.:             0.800\nTime:          \
+        \            15:22   Pseudo R-bar-squ.:         0.800\nAIC:              \
+        \     2,726.841   Log-Likelihood:       -1,357.420\nBIC:                 \
+        \  2,760.446   LL-Null:              -6,802.395\n======================================================================================================\n\
+        \                                                       coef   std err   \
+        \      z     P>|z|   Conf. Int.\n------------------------------------------------------------------------------------------------------\n\
+        ln_parcels_ratio_jobs_to_households                  1.3249     0.030    44.551\
+        \     0.000             \nis_warehouse                                   \
+        \     -3.2040     0.231   -13.893     0.000             \nblocks_mean_year_built\
+        \                               0.0071     0.000    47.963     0.000     \
+        \        \nblocks_prop_sector_id_11                            -1.6941   \
+        \  0.197    -8.617     0.000             \nblocks_prop_sector_id_6       \
+        \                      -3.2077     0.422    -7.600     0.000             \n\
+        ln_parcels_mean_non_residential_sqft_ave_400_flat    2.2825     0.139    16.479\
+        \     0.000             \n======================================================================================================"
+    tags: []
+    template: LargeMultinomialLogitStep
+    template_version: 0.1.dev15

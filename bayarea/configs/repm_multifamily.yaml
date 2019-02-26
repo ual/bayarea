@@ -1,0 +1,126 @@
+modelmanager_version: 0.1.dev14
+
+saved_object:
+    filters: (impval_per_unit > 0) & (repm_id == "multifamily")
+    fitted_parameters:
+    - -4831886.879536658
+    - 64.97834289535302
+    - 14846.457125722127
+    - 4726.082156208522
+    - 7.154655022520202
+    - 1979.4343316994455
+    - 1431.7542128724897
+    - -2.05941518269265
+    - 19.270091250856378
+    - 1408.4976095288043
+    - -79687.46217638467
+    - -264210.54476782295
+    model:
+        fit_filters: (impval_per_unit > 0) & (repm_id == "multifamily")
+        fit_parameters:
+            Coefficient:
+                Intercept: -4831886.879536658
+                block_groups_prop_income_quartile_4: 1979.4343316994455
+                blocks_density_buildings: 1431.7542128724897
+                blocks_prop_building_type_id_1220: 4726.082156208522
+                blocks_prop_sector_id_11: 14846.457125722127
+                parcels_mean_children_ave_3600_flat: -264210.54476782295
+                sqft_per_unit: 64.97834289535302
+                year_built: 1408.4976095288043
+                zone_districts_sum_residential_units: 7.154655022520202
+                zone_subdistricts_mean_non_residential_sqft: -2.05941518269265
+                zones_prop_building_type_id_5100: -79687.46217638467
+                zones_total_jobs_25_am_peak_travel_time: 19.270091250856378
+            Std. Error:
+                Intercept: 1681456.8087324386
+                block_groups_prop_income_quartile_4: 18912.45606563818
+                blocks_density_buildings: 777.0453684289394
+                blocks_prop_building_type_id_1220: 6448.226731855295
+                blocks_prop_sector_id_11: 6069.422463682698
+                parcels_mean_children_ave_3600_flat: 72064.48365488664
+                sqft_per_unit: 3.573163490114206
+                year_built: 109.72757693238628
+                zone_districts_sum_residential_units: 0.7078523259047943
+                zone_subdistricts_mean_non_residential_sqft: 0.9634699792756666
+                zones_prop_building_type_id_5100: 83346.74528265088
+                zones_total_jobs_25_am_peak_travel_time: 15.578431610263728
+            T-Score:
+                Intercept: -2.873631278807073
+                block_groups_prop_income_quartile_4: 0.10466299695975799
+                blocks_density_buildings: 1.8425619288707251
+                blocks_prop_building_type_id_1220: 0.7329274159763804
+                blocks_prop_sector_id_11: 2.4461070578886432
+                parcels_mean_children_ave_3600_flat: -3.6663073315437127
+                sqft_per_unit: 18.185102102136437
+                year_built: 12.836313795543989
+                zone_districts_sum_residential_units: 10.107553172725604
+                zone_subdistricts_mean_non_residential_sqft: -2.137498030027787
+                zones_prop_building_type_id_5100: -0.956095668836778
+                zones_total_jobs_25_am_peak_travel_time: 1.23697248432637
+        fit_rsquared: 0.21798641522321527
+        fit_rsquared_adj: 0.21493167465768093
+        fitted: true
+        model_expression: impval_per_unit ~ sqft_per_unit + blocks_prop_sector_id_11
+            + blocks_prop_building_type_id_1220 + zone_districts_sum_residential_units
+            + block_groups_prop_income_quartile_4 + blocks_density_buildings + zone_subdistricts_mean_non_residential_sqft
+            + zones_total_jobs_25_am_peak_travel_time + year_built + zones_prop_building_type_id_5100
+            + parcels_mean_children_ave_3600_flat + 1
+        model_type: regression
+        name: RegressionModel
+        predict_filters: null
+        ytransform: null
+    model_expression: impval_per_unit ~ sqft_per_unit + blocks_prop_sector_id_11 +
+        blocks_prop_building_type_id_1220 + zone_districts_sum_residential_units +
+        block_groups_prop_income_quartile_4 + blocks_density_buildings + zone_subdistricts_mean_non_residential_sqft
+        + zones_total_jobs_25_am_peak_travel_time + year_built + zones_prop_building_type_id_5100
+        + parcels_mean_children_ave_3600_flat + 1
+    name: repm_multifamily
+    out_column: pred_multifamily_price
+    out_filters: null
+    out_tables: null
+    out_transform: null
+    summary_table: "                            OLS Regression Results           \
+        \                 \n==============================================================================\n\
+        Dep. Variable:        impval_per_unit   R-squared:                       0.218\n\
+        Model:                            OLS   Adj. R-squared:                  0.215\n\
+        Method:                 Least Squares   F-statistic:                     71.36\n\
+        Date:                Wed, 17 Oct 2018   Prob (F-statistic):          1.34e-141\n\
+        Time:                        19:24:16   Log-Likelihood:                -36403.\n\
+        No. Observations:                2828   AIC:                         7.283e+04\n\
+        Df Residuals:                    2816   BIC:                         7.290e+04\n\
+        Df Model:                          11                                    \
+        \     \nCovariance Type:            nonrobust                            \
+        \             \n===============================================================================================================\n\
+        \                                                  coef    std err       \
+        \   t      P>|t|      [0.025      0.975]\n---------------------------------------------------------------------------------------------------------------\n\
+        Intercept                                   -4.832e+06   1.68e+06     -2.874\
+        \      0.004   -8.13e+06   -1.53e+06\nsqft_per_unit                      \
+        \            64.9783      3.573     18.185      0.000      57.972      71.985\n\
+        blocks_prop_sector_id_11                     1.485e+04   6069.422      2.446\
+        \      0.015    2945.492    2.67e+04\nblocks_prop_building_type_id_1220  \
+        \          4726.0822   6448.227      0.733      0.464   -7917.644    1.74e+04\n\
+        zone_districts_sum_residential_units            7.1547      0.708     10.108\
+        \      0.000       5.767       8.543\nblock_groups_prop_income_quartile_4\
+        \          1979.4343   1.89e+04      0.105      0.917   -3.51e+04    3.91e+04\n\
+        blocks_density_buildings                     1431.7542    777.045      1.843\
+        \      0.065     -91.882    2955.390\nzone_subdistricts_mean_non_residential_sqft\
+        \    -2.0594      0.963     -2.137      0.033      -3.949      -0.170\nzones_total_jobs_25_am_peak_travel_time\
+        \        19.2701     15.578      1.237      0.216     -11.276      49.816\n\
+        year_built                                   1408.4976    109.728     12.836\
+        \      0.000    1193.343    1623.652\nzones_prop_building_type_id_5100   \
+        \         -7.969e+04   8.33e+04     -0.956      0.339   -2.43e+05    8.37e+04\n\
+        parcels_mean_children_ave_3600_flat         -2.642e+05   7.21e+04     -3.666\
+        \      0.000   -4.06e+05   -1.23e+05\n==============================================================================\n\
+        Omnibus:                     6801.898   Durbin-Watson:                   1.801\n\
+        Prob(Omnibus):                  0.000   Jarque-Bera (JB):         78895414.198\n\
+        Skew:                          24.170   Prob(JB):                        \
+        \ 0.00\nKurtosis:                     819.832   Cond. No.                \
+        \     1.03e+08\n==============================================================================\n\
+        \nWarnings:\n[1] Standard Errors assume that the covariance matrix of the\
+        \ errors is correctly specified.\n[2] The condition number is large, 1.03e+08.\
+        \ This might indicate that there are\nstrong multicollinearity or other numerical\
+        \ problems."
+    tables: buildings
+    tags: []
+    template: OLSRegressionStep
+    template_version: 0.1.dev14

@@ -1,0 +1,96 @@
+old_plan_id_x100,plan_designation_name,plan,plan_label,plan_designation,plan_designation_code
+200.0,COB -- CENTRAL BUSINESS DISTRICT -- B,COB,Coburg Comprehensive Plan,CENTRAL BUSINESS DISTRICT,B
+300.0,COB -- HWY COMMERCIAL -- C,COB,Coburg Comprehensive Plan,HWY COMMERCIAL,C
+400.0,COB -- LIGHT INDUSTRIAL -- I,COB,Coburg Comprehensive Plan,LIGHT INDUSTRIAL,I
+500.0,COB -- PARK/RECREATION -- P,COB,Coburg Comprehensive Plan,PARK/RECREATION,P
+600.0,COB -- PUBLIC FACILITY -- W,COB,Coburg Comprehensive Plan,PUBLIC FACILITY,W
+800.0,COB -- TRADITIONAL RESIDENTIAL -- L,COB,Coburg Comprehensive Plan,TRADITIONAL RESIDENTIAL,L
+1000.0,MP EUG -- Campus Industrial -- O,MP EUG,Metro Plan (Eugene),Campus Industrial,O
+1100.0,MP EUG -- Commercial -- C,MP EUG,Metro Plan (Eugene),Commercial,C
+1200.0,MP EUG -- Commercial Mixed Use -- D,MP EUG,Metro Plan (Eugene),Commercial Mixed Use,D
+1400.0,MP EUG -- Government & Education -- E & X,MP EUG,Metro Plan (Eugene),Government & Education,E & X
+1600.0,MP EUG -- Heavy Industrial -- Z,MP EUG,Metro Plan (Eugene),Heavy Industrial,Z
+1700.0,MP EUG -- High Density Res Mixed Use -- S,MP EUG,Metro Plan (Eugene),High Density Res Mixed Use,S
+1800.0,MP EUG -- High Density Residential -- H,MP EUG,Metro Plan (Eugene),High Density Residential,H
+1900.0,MP EUG -- Light Medium Industrial -- I,MP EUG,Metro Plan (Eugene),Light Medium Industrial,I
+2000.0,MP EUG -- Low Density Residential -- L,MP EUG,Metro Plan (Eugene),Low Density Residential,L
+2100.0,MP EUG -- Major Retail Center -- K,MP EUG,Metro Plan (Eugene),Major Retail Center,K
+2200.0,MP EUG -- Medium Density Res Mixed Use -- U,MP EUG,Metro Plan (Eugene),Medium Density Res Mixed Use,U
+2300.0,MP EUG -- Medium Density Residential -- M,MP EUG,Metro Plan (Eugene),Medium Density Residential,M
+2400.0,MP EUG -- Mixed Use -- MU,MP EUG,Metro Plan (Eugene),Mixed Use,MU
+2500.0,MP EUG -- Natural Resource -- N,MP EUG,Metro Plan (Eugene),Natural Resource,N
+2600.0,MP EUG -- Parks and Open Space -- P,MP EUG,Metro Plan (Eugene),Parks and Open Space,P
+2700.0,MP EUG -- Parks/OpenSpace Mixed Use -- B,MP EUG,Metro Plan (Eugene),Parks/OpenSpace Mixed Use,B
+3000.0,MP EUG -- Special Heavy Industrial -- Y,MP EUG,Metro Plan (Eugene),Special Heavy Industrial,Y
+3100.0,MP EUG -- University Research -- V,MP EUG,Metro Plan (Eugene),University Research,V
+3200.0,LC -- AGRICULTURE -- A,LC,Lane County,AGRICULTURE,A
+3300.0,LC -- AIRPORT -- AIR,LC,Lane County,AIRPORT,AIR
+3400.0,LC -- COMMERCIAL -- C,LC,Lane County,COMMERCIAL,C
+3500.0,LC -- FOREST -- F,LC,Lane County,FOREST,F
+3600.0,LC -- INDUSTRIAL -- I,LC,Lane County,INDUSTRIAL,I
+3700.0,LC -- MARGINAL -- ML,LC,Lane County,MARGINAL,ML
+3800.0,LC -- NATURAL RESOURCE : MINERAL -- NR:M,LC,Lane County,NATURAL RESOURCE : MINERAL,NR:M
+3900.0,LC -- NATURAL RESOURCE : WILDLIFE -- NR:W,LC,Lane County,NATURAL RESOURCE : WILDLIFE,NR:W
+4000.0,LC -- NATURAL RESOURCE CONSERVATION AREA -- NR:CA,LC,Lane County,NATURAL RESOURCE CONSERVATION AREA,NR:CA
+4100.0,LC -- NON RESOURCE -- NRES,LC,Lane County,NON RESOURCE,NRES
+4200.0,LC -- PARKS -- P,LC,Lane County,PARKS,P
+4300.0,LC -- PUBLIC FACILITY -- PF,LC,Lane County,PUBLIC FACILITY,PF
+4400.0,LC -- RESIDENTIAL -- R,LC,Lane County,RESIDENTIAL,R
+4500.0,MP SPR -- Agriculture -- A,MP SPR,Metro Plan (Springfield),Agriculture,A
+4600.0,MP SPR -- Campus Industrial -- O,MP SPR,Metro Plan (Springfield),Campus Industrial,O
+4700.0,MP SPR -- Commercial -- C,MP SPR,Metro Plan (Springfield),Commercial,C
+4800.0,MP SPR -- Commercial Mixed Use -- D,MP SPR,Metro Plan (Springfield),Commercial Mixed Use,D
+4900.0,MP SPR -- Forest Land -- F,MP SPR,Metro Plan (Springfield),Forest Land,F
+5000.0,MP SPR -- Education -- E,MP SPR,Metro Plan (Springfield),Education,E
+5100.0,MP SPR -- Government -- X,MP SPR,Metro Plan (Springfield),Government,X
+5200.0,MP SPR -- Heavy Industrial -- Z,MP SPR,Metro Plan (Springfield),Heavy Industrial,Z
+5300.0,MP SPR -- High Density Residential -- H,MP SPR,Metro Plan (Springfield),High Density Residential,H
+5400.0,MP SPR -- Light Med Ind Mixed Use -- W,MP SPR,Metro Plan (Springfield),Light Med Ind Mixed Use,W
+5500.0,MP SPR -- Light Medium Industrial -- I,MP SPR,Metro Plan (Springfield),Light Medium Industrial,I
+5600.0,MP SPR -- Low Density Residential -- L,MP SPR,Metro Plan (Springfield),Low Density Residential,L
+5700.0,MP SPR -- Major Retail Center -- K,MP SPR,Metro Plan (Springfield),Major Retail Center,K
+5800.0,MP SPR -- Medium Density Res Mixed Use -- U,MP SPR,Metro Plan (Springfield),Medium Density Res Mixed Use,U
+5900.0,MP SPR -- Medium Density Residential -- M,MP SPR,Metro Plan (Springfield),Medium Density Residential,M
+6000.0,MP SPR -- Mixed Use -- MU,MP SPR,Metro Plan (Springfield),Mixed Use,MU
+6100.0,MP SPR -- Nodal Development -- ND,MP SPR,Metro Plan (Springfield),Nodal Development,ND
+6200.0,MP SPR -- Nodal Development/Mixed Use -- ND,MP SPR,Metro Plan (Springfield),Nodal Development/Mixed Use,ND
+6300.0,MP SPR -- Parks and Open Space -- P,MP SPR,Metro Plan (Springfield),Parks and Open Space,P
+6400.0,MP SPR -- Rural Residential -- R,MP SPR,Metro Plan (Springfield),Rural Residential,R
+6500.0,MP SPR -- Sand and Gravel -- G,MP SPR,Metro Plan (Springfield),Sand and Gravel,G
+6600.0,MP SPR -- Special Heavy Industrial -- Y,MP SPR,Metro Plan (Springfield),Special Heavy Industrial,Y
+,MP LC -- Agriculture -- A,MP LC,Metro Plan (Lane County),Agriculture,A
+,MP LC -- Airport Reserve -- T,MP LC,Metro Plan (Lane County),Airport Reserve,T
+,MP LC -- Forest Land -- F,MP LC,Metro Plan (Lane County),Forest Land,F
+,MP LC -- Government -- X,MP LC,Metro Plan (Lane County),Government,X
+,MP LC -- Natural Resource -- N,MP LC,Metro Plan (Lane County),Natural Resource,N
+,MP LC -- Parks and Open Space -- P,MP LC,Metro Plan (Lane County),Parks and Open Space,P
+,MP LC -- Rural Residential -- R,MP LC,Metro Plan (Lane County),Rural Residential,R
+,MP LC -- Sand and Gravel -- G,MP LC,Metro Plan (Lane County),Sand and Gravel,G
+,MP LC -- Rural Commercial -- Q,MP LC,Metro Plan (Lane County),Rural Commercial,Q
+,MP LC -- Rural Industrial -- J,MP LC,Metro Plan (Lane County),Rural Industrial,J
+1100.0,,,,,
+1200.0,,,,,
+1300.0,,,,,
+1400.0,,,,,
+1500.0,,,,,
+1600.0,,,,,
+1700.0,,,,,
+1800.0,,,,,
+1900.0,,,,,
+2000.0,,,,,
+2100.0,,,,,
+2200.0,,,,,
+2300.0,,,,,
+2400.0,,,,,
+2500.0,,,,,
+2600.0,,,,,
+2700.0,,,,,
+2800.0,,,,,
+2900.0,,,,,
+3000.0,,,,,
+3100.0,,,,,
+100.0,,,,,
+700.0,,,,,
+6800.0,,,,,
+6700.0,,,,,
+6900.0,,,,,

@@ -1,0 +1,59 @@
+modelmanager_version: 0.1.dev15
+
+saved_object:
+    alt_capacity: job_spaces
+    alt_filters: null
+    alt_sample_size: 30
+    alternatives: buildings
+    choice_column: building_id
+    chooser_filters:
+    - sector_id == 11
+    chooser_sample_size: 2000
+    chooser_size: null
+    choosers: jobs
+    constrained_choices: true
+    fitted_parameters:
+    - 0.40742180384455795
+    - 0.0018442052629119843
+    - 0.0049095283084628905
+    - 8.20071044577214
+    - 0.10878742419852536
+    - -0.17768800830348339
+    - -0.8238026349516311
+    - 0.9450804845197122
+    max_iter: null
+    model_expression: ln_zones_sum_persons_10_am_peak_travel_time + block_groups_density_households
+        + year_built + ln_parcels_prop_sector_id_11 + ln_non_residential_sqft + ln_zones_prop_repm_id_retail
+        + ln_blocks_prop_repm_id_office + ln_parcels_ratio_jobs_to_households - 1
+    name: elcm11
+    out_alt_filters: null
+    out_alternatives: null
+    out_chooser_filters:
+    - building_id == -1
+    - sector_id == 11
+    out_choosers: null
+    out_column: building_id
+    summary_table: "                  CHOICEMODELS ESTIMATION RESULTS            \
+        \      \n===================================================================\n\
+        Dep. Var.:                chosen   No. Observations:          2,000\nModel:\
+        \         Multinomial Logit   Df Residuals:              1,992\nMethod:  \
+        \     Maximum Likelihood   Df Model:                      8\nDate:       \
+        \          2018-11-20   Pseudo R-squ.:             0.926\nTime:          \
+        \            15:22   Pseudo R-bar-squ.:         0.924\nAIC:              \
+        \     1,029.222   Log-Likelihood:         -506.611\nBIC:                 \
+        \  1,074.029   LL-Null:              -6,802.395\n================================================================================================\n\
+        \                                                 coef   std err         z\
+        \     P>|z|   Conf. Int.\n------------------------------------------------------------------------------------------------\n\
+        ln_zones_sum_persons_10_am_peak_travel_time    0.4074     0.181     2.251\
+        \     0.024             \nblock_groups_density_households                0.0018\
+        \     0.025     0.073     0.942             \nyear_built                 \
+        \                    0.0049     0.001     4.847     0.000             \nln_parcels_prop_sector_id_11\
+        \                   8.2007     0.322    25.454     0.000             \nln_non_residential_sqft\
+        \                        0.1088     0.022     5.026     0.000            \
+        \ \nln_zones_prop_repm_id_retail                  -0.1777     0.472    -0.377\
+        \     0.706             \nln_blocks_prop_repm_id_office                 -0.8238\
+        \     0.333    -2.470     0.013             \nln_parcels_ratio_jobs_to_households\
+        \            0.9451     0.051    18.461     0.000             \n================================================================================================"
+    tags: []
+    template: LargeMultinomialLogitStep
+    template_version: 0.1.dev15

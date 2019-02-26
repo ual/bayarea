@@ -1,0 +1,39 @@
+modelmanager_version: 0.1.dev15
+
+saved_object:
+    filters: null
+    fitted_parameters:
+    - 6.604347182943784
+    - 1.4423694610591535
+    - -2.2559125126365984
+    - -0.28526967532263064
+    model_expression: recent_mover ~ tenure_rent + ln_age_of_head + cars +
+        1
+    name: household_relocation_choice_model
+    out_column: building_id
+    out_filters: null
+    out_tables: households
+    out_transform: null
+    out_value_false: nothing
+    out_value_true: -1
+    summary_table: "                            Logit Regression Results         \
+        \                   \n================================================================================\n\
+        Dep. Variable:     recent_mover_oneyear   No. Observations:              \
+        \   3194\nModel:                            Logit   Df Residuals:        \
+        \             3190\nMethod:                             MLE   Df Model:  \
+        \                          3\nDate:                  Thu, 13 Dec 2018   Pseudo\
+        \ R-squ.:                  0.2542\nTime:                          15:35:18\
+        \   Log-Likelihood:                -989.80\nconverged:                   \
+        \      True   LL-Null:                       -1327.2\n                   \
+        \                       LLR p-value:                6.129e-146\n==================================================================================\n\
+        \                     coef    std err          z      P>|z|      [0.025  \
+        \    0.975]\n----------------------------------------------------------------------------------\n\
+        Intercept          6.6043      0.671      9.845      0.000       5.290   \
+        \    7.919\ntenure_rent        1.4424      0.137     10.496      0.000   \
+        \    1.173       1.712\nln_age_of_head    -2.2559      0.161    -13.980  \
+        \    0.000      -2.572      -1.940\ncars              -0.2853      0.063 \
+        \    -4.529      0.000      -0.409      -0.162\n=================================================================================="
+    tables: households_pums
+    tags: []
+    template: BinaryLogitStep
+    template_version: 0.1.dev15

@@ -1,0 +1,54 @@
+modelmanager_version: 0.1.dev15
+
+saved_object:
+    alt_capacity: job_spaces
+    alt_filters: null
+    alt_sample_size: 30
+    alternatives: buildings
+    choice_column: building_id
+    chooser_filters:
+    - sector_id == 7
+    chooser_sample_size: 2000
+    chooser_size: null
+    choosers: jobs
+    constrained_choices: true
+    fitted_parameters:
+    - 0.3173234427243532
+    - 0.03140224030128022
+    - -7.135627315022186
+    - 0.3862567419675501
+    - 5.9768508976649226e-05
+    - -0.29744992779480084
+    max_iter: null
+    model_expression: ln_parcels_prop_building_type_id_4100 + parcels_mean_year_built
+        + ln_blocks_prop_building_type_id_5100 + ln_non_residential_sqft + zones_total_jobs_15_am_peak_travel_time
+        + block_groups_density_buildings - 1
+    name: elcm7
+    out_alt_filters: null
+    out_alternatives: null
+    out_chooser_filters:
+    - building_id == -1
+    - sector_id == 7
+    out_choosers: null
+    out_column: building_id
+    summary_table: "                  CHOICEMODELS ESTIMATION RESULTS            \
+        \      \n===================================================================\n\
+        Dep. Var.:                chosen   No. Observations:          2,000\nModel:\
+        \         Multinomial Logit   Df Residuals:              1,994\nMethod:  \
+        \     Maximum Likelihood   Df Model:                      6\nDate:       \
+        \          2018-11-20   Pseudo R-squ.:             0.546\nTime:          \
+        \            15:22   Pseudo R-bar-squ.:         0.545\nAIC:              \
+        \     6,193.912   Log-Likelihood:       -3,090.956\nBIC:                 \
+        \  6,227.518   LL-Null:              -6,802.395\n============================================================================================\n\
+        \                                             coef   std err         z   \
+        \  P>|z|   Conf. Int.\n--------------------------------------------------------------------------------------------\n\
+        ln_parcels_prop_building_type_id_4100      0.3173     0.136     2.332    \
+        \ 0.020             \nparcels_mean_year_built                    0.0314  \
+        \   0.000   236.951     0.000             \nln_blocks_prop_building_type_id_5100\
+        \      -7.1356     0.370   -19.295     0.000             \nln_non_residential_sqft\
+        \                    0.3863     0.007    55.606     0.000             \nzones_total_jobs_15_am_peak_travel_time\
+        \    0.0001     0.000    23.274     0.000             \nblock_groups_density_buildings\
+        \            -0.2974     0.020   -14.623     0.000             \n============================================================================================"
+    tags: []
+    template: LargeMultinomialLogitStep
+    template_version: 0.1.dev15

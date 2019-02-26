@@ -1,0 +1,226 @@
+parcel_sizes:
+- 10000.0
+
+fars:
+- 0.01
+- 0.03
+- 0.04
+- 0.05
+- 0.0625
+- 0.075
+- 0.086
+- 0.1
+- 0.175
+- 0.25
+- 0.5
+- 0.75
+- 1.0
+- 1.5
+- 1.8
+- 2.0
+- 2.25
+- 2.5
+- 2.75
+- 3.0
+- 3.25
+- 3.5
+- 3.75
+- 4.0
+- 4.5
+- 5.0
+- 5.5
+- 6.0
+- 6.5
+- 7.0
+- 9.0
+- 11.0
+
+uses:
+- retail
+- industrial
+- office
+- residential
+
+residential_uses:
+- false
+- false
+- false
+- true
+
+forms:
+    industrial:
+        industrial: 1.0
+    office:
+        office: 1.0
+    residential:
+        residential: 1.0
+    retail:
+        retail: 1.0
+    residential_office:
+        office: 0.5
+        residential: 0.5
+    retail_office:
+        office: 0.5
+        retail: 0.5
+    residential_retail:
+        residential: 0.5
+        retail: 0.5
+    mix_non_residential:
+        industrial: 0.3
+        office: 0.4
+        retail: 0.3
+    mix_all:
+        industrial: 0.25
+        office: 0.25
+        residential: 0.25
+        retail: 0.25
+
+
+profit_factor: 1.1
+
+building_efficiency: 0.75
+
+parcel_coverage: 0.8
+
+cap_rate: 0.015
+
+parking_rates:
+    industrial: 0.6
+    office: 1.0
+    residential: 1.0
+    retail: 2.0
+
+sqft_per_rate: 1000.0
+
+parking_configs:
+- surface
+- deck
+- underground
+
+costs:
+    industrial:
+    - 125.0
+    - 125.0
+    - 130.0
+    - 999.0
+    - 999.0
+    - 999.0
+    - 999.0
+    - 999.0
+    - 999.0
+    office:
+    - 160.0
+    - 175.0
+    - 180.0
+    - 180.0
+    - 200.0
+    - 200.0
+    - 230.0
+    - 999.0
+    - 999.0
+    residential:
+    - 130.0
+    - 140.0
+    - 160.0
+    - 180.0
+    - 180.0
+    - 205.0
+    - 205.0
+    - 205.0
+    - 999.0
+    retail:
+    - 150.0
+    - 165.0
+    - 999.0
+    - 999.0
+    - 999.0
+    - 999.0
+    - 999.0
+    - 999.0
+    - 999.0
+
+heights_for_costs:
+- 12
+- 24
+- 36
+- 48
+- 72
+- 108
+- 216
+- 216
+- .inf
+
+parking_sqft_d:
+    deck: 250.0
+    surface: 300.0
+    underground: 250.0
+
+parking_cost_d:
+    deck: 81.0
+    surface: 27.0
+    underground: 99.0
+
+height_per_story: 12.0
+
+max_retail_height: 2.0
+
+max_industrial_height: 2.0
+
+construction_months:
+    industrial:
+    - 12.0
+    - 14.0
+    - 18.0
+    - 24.0
+    office:
+    - 12.0
+    - 14.0
+    - 18.0
+    - 24.0
+    residential:
+    - 12.0
+    - 14.0
+    - 18.0
+    - 24.0
+    retail:
+    - 12.0
+    - 14.0
+    - 18.0
+    - 24.0
+
+loan_fees: 0.02
+
+only_built: true
+
+loan_to_cost_ratio: 0.7
+
+parcel_filter: null
+
+interest_rate: 0.05
+
+residential_to_yearly: false
+
+drawdown_factor: 0.6
+
+construction_sqft_for_months:
+- 10000
+- 20000
+- 50000
+- .inf
+
+forms_to_test:
+- industrial
+- office
+- residential
+- retail
+- residential_office
+- retail_office
+- residential_retail
+- mix_non_residential
+- mix_all
+
+pass_through: []
+
+simple_zoning: false
+
+proposals_to_keep: 3

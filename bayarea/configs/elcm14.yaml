@@ -1,0 +1,53 @@
+modelmanager_version: 0.1.dev15
+
+saved_object:
+    alt_capacity: job_spaces
+    alt_filters: null
+    alt_sample_size: 30
+    alternatives: buildings
+    choice_column: building_id
+    chooser_filters:
+    - sector_id == 14
+    chooser_sample_size: 2000
+    chooser_size: null
+    choosers: jobs
+    constrained_choices: true
+    fitted_parameters:
+    - 0.16007479274015227
+    - 2.2216408331281747
+    - 0.5517990838745749
+    - -3.6708526175694547
+    - -0.304216882951774
+    max_iter: null
+    model_expression: ln_blocks_median_acres + ln_blocks_prop_building_type_id_5100
+        + ln_non_residential_sqft + zone_subdistricts_prop_building_type_id_1122 +
+        block_groups_density_buildings - 1
+    name: elcm14
+    out_alt_filters: null
+    out_alternatives: null
+    out_chooser_filters:
+    - building_id == -1
+    - sector_id == 14
+    out_choosers: null
+    out_column: building_id
+    summary_table: "                  CHOICEMODELS ESTIMATION RESULTS            \
+        \      \n===================================================================\n\
+        Dep. Var.:                chosen   No. Observations:          2,000\nModel:\
+        \         Multinomial Logit   Df Residuals:              1,995\nMethod:  \
+        \     Maximum Likelihood   Df Model:                      5\nDate:       \
+        \          2018-11-20   Pseudo R-squ.:             0.762\nTime:          \
+        \            15:23   Pseudo R-bar-squ.:         0.762\nAIC:              \
+        \     3,244.735   Log-Likelihood:       -1,617.367\nBIC:                 \
+        \  3,272.739   LL-Null:              -6,802.395\n=================================================================================================\n\
+        \                                                  coef   std err        \
+        \ z     P>|z|   Conf. Int.\n-------------------------------------------------------------------------------------------------\n\
+        ln_blocks_median_acres                          0.1601     0.060     2.667\
+        \     0.008             \nln_blocks_prop_building_type_id_5100           \
+        \ 2.2216     0.182    12.209     0.000             \nln_non_residential_sqft\
+        \                         0.5518     0.009    59.466     0.000           \
+        \  \nzone_subdistricts_prop_building_type_id_1122   -3.6709     1.228    -2.990\
+        \     0.003             \nblock_groups_density_buildings                 -0.3042\
+        \     0.031    -9.751     0.000             \n================================================================================================="
+    tags: []
+    template: LargeMultinomialLogitStep
+    template_version: 0.1.dev15

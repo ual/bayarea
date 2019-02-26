@@ -1,0 +1,55 @@
+modelmanager_version: 0.1.dev15
+
+saved_object:
+    alt_capacity: job_spaces
+    alt_filters: null
+    alt_sample_size: 30
+    alternatives: buildings
+    choice_column: building_id
+    chooser_filters:
+    - sector_id == 10
+    chooser_sample_size: 2000
+    chooser_size: null
+    choosers: jobs
+    constrained_choices: true
+    fitted_parameters:
+    - 0.43717560203812406
+    - -0.04924022891569171
+    - 0.7650841731061649
+    - 7.770261864850356
+    - 0.22492729426749367
+    - 0.20927561961116525
+    max_iter: null
+    model_expression: ln_parcels_mean_non_residential_sqft + ln_zones_total_jobs_10_md_offpeak_travel_time
+        + parcels_mean_income_ave_1200_linear + zone_subdistricts_prop_building_type_id_1220
+        + ln_zones_sum_persons_5_md_offpeak_travel_time + ln_blocks_total_jobs - 1
+    name: elcm10
+    out_alt_filters: null
+    out_alternatives: null
+    out_chooser_filters:
+    - building_id == -1
+    - sector_id == 10
+    out_choosers: null
+    out_column: building_id
+    summary_table: "                  CHOICEMODELS ESTIMATION RESULTS            \
+        \      \n===================================================================\n\
+        Dep. Var.:                chosen   No. Observations:          2,000\nModel:\
+        \         Multinomial Logit   Df Residuals:              1,994\nMethod:  \
+        \     Maximum Likelihood   Df Model:                      6\nDate:       \
+        \          2018-11-20   Pseudo R-squ.:             0.550\nTime:          \
+        \            15:22   Pseudo R-bar-squ.:         0.549\nAIC:              \
+        \     6,131.806   Log-Likelihood:       -3,059.903\nBIC:                 \
+        \  6,165.411   LL-Null:              -6,802.395\n==================================================================================================\n\
+        \                                                   coef   std err       \
+        \  z     P>|z|   Conf. Int.\n--------------------------------------------------------------------------------------------------\n\
+        ln_parcels_mean_non_residential_sqft             0.4372     0.008    53.812\
+        \     0.000             \nln_zones_total_jobs_10_md_offpeak_travel_time  \
+        \ -0.0492     0.070    -0.700     0.484             \nparcels_mean_income_ave_1200_linear\
+        \              0.7651     0.046    16.665     0.000             \nzone_subdistricts_prop_building_type_id_1220\
+        \     7.7703     0.720    10.790     0.000             \nln_zones_sum_persons_5_md_offpeak_travel_time\
+        \    0.2249     0.056     4.011     0.000             \nln_blocks_total_jobs\
+        \                             0.2093     0.021     9.773     0.000       \
+        \      \n=================================================================================================="
+    tags: []
+    template: LargeMultinomialLogitStep
+    template_version: 0.1.dev15

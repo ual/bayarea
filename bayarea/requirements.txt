@@ -1,0 +1,15 @@
+altair==1.2.0
+numpy<=1.15.4
+orca>=1.3.0
+pandana>=0.4.0
+pandas<=0.23.4
+pyyaml
+urbansim>=0.1.1
+
+-e ../
+
+https://github.com/udst/choicemodels/archive/master.zip#egg=choicemodels
+git+https://github.com/udst/developer.git#egg=developer
+git+ssh://git@github.com/urbansim/urbansim_parcels.git@ej-test#egg=urbansim_parcels
+https://github.com/udst/urbansim_templates/archive/ej-test.zip#egg=urbansim_templates
+https://github.com/udst/variable_generators/archive/master.zip#egg=variable_generators

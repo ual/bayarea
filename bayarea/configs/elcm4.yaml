@@ -1,0 +1,56 @@
+modelmanager_version: 0.1.dev15
+
+saved_object:
+    alt_capacity: job_spaces
+    alt_filters: null
+    alt_sample_size: 30
+    alternatives: buildings
+    choice_column: building_id
+    chooser_filters:
+    - sector_id == 4
+    chooser_sample_size: 2000
+    chooser_size: null
+    choosers: jobs
+    constrained_choices: true
+    fitted_parameters:
+    - 0.5555218289515871
+    - -0.027499110270577148
+    - 0.7257968646313612
+    - 10.392373479979357
+    - -1.5908834427852838
+    - 3.751849430047147e-05
+    - 8.619243329870525
+    max_iter: null
+    model_expression: ln_non_residential_sqft + block_groups_mean_year_built + ln_acres
+        + ln_blocks_prop_sector_id_4 + ln_blocks_prop_building_type_id_5100 + zones_total_jobs_5_md_offpeak_travel_time
+        + ln_parcels_sum_children_ave_4400_flat - 1
+    name: elcm4
+    out_alt_filters: null
+    out_alternatives: null
+    out_chooser_filters:
+    - building_id == -1
+    - sector_id == 4
+    out_choosers: null
+    out_column: building_id
+    summary_table: "                  CHOICEMODELS ESTIMATION RESULTS            \
+        \      \n===================================================================\n\
+        Dep. Var.:                chosen   No. Observations:          2,000\nModel:\
+        \         Multinomial Logit   Df Residuals:              1,993\nMethod:  \
+        \     Maximum Likelihood   Df Model:                      7\nDate:       \
+        \          2018-11-20   Pseudo R-squ.:             0.979\nTime:          \
+        \            15:22   Pseudo R-bar-squ.:         0.978\nAIC:              \
+        \       299.296   Log-Likelihood:         -142.648\nBIC:                 \
+        \    338.502   LL-Null:              -6,802.395\n==============================================================================================\n\
+        \                                               coef   std err         z \
+        \    P>|z|   Conf. Int.\n----------------------------------------------------------------------------------------------\n\
+        ln_non_residential_sqft                      0.5555     0.038    14.522  \
+        \   0.000             \nblock_groups_mean_year_built                -0.0275\
+        \     0.001   -24.833     0.000             \nln_acres                   \
+        \                  0.7258     0.121     5.985     0.000             \nln_blocks_prop_sector_id_4\
+        \                  10.3924     0.529    19.643     0.000             \nln_blocks_prop_building_type_id_5100\
+        \        -1.5909     1.177    -1.352     0.176             \nzones_total_jobs_5_md_offpeak_travel_time\
+        \    0.0000     0.000     2.183     0.029             \nln_parcels_sum_children_ave_4400_flat\
+        \        8.6192     6.894     1.250     0.211             \n=============================================================================================="
+    tags: []
+    template: LargeMultinomialLogitStep
+    template_version: 0.1.dev15

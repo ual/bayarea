@@ -1,0 +1,60 @@
+modelmanager_version: 0.1.dev15
+
+saved_object:
+    alt_capacity: job_spaces
+    alt_filters: null
+    alt_sample_size: 30
+    alternatives: buildings
+    choice_column: building_id
+    chooser_filters:
+    - sector_id == 8
+    chooser_sample_size: 2000
+    chooser_size: null
+    choosers: jobs
+    constrained_choices: true
+    fitted_parameters:
+    - 7.966056303213841
+    - 0.23654093822272007
+    - 2.330925988134607
+    - 0.71006124553538
+    - -1.1701789157318836
+    - 1.158737283061245
+    - -0.012473392328043757
+    - -0.7388399587850671
+    max_iter: null
+    model_expression: ln_block_groups_prop_sector_id_8 + ln_non_residential_sqft +
+        ln_zones_prop_building_type_id_5100 + parcels_total_jobs_sum_400_linear +
+        parcels_mean_income_ave_3600_flat + ln_blocks_mean_acres + blocks_mean_year_built
+        + ln_block_groups_prop_building_type_id_1220 - 1
+    name: elcm8
+    out_alt_filters: null
+    out_alternatives: null
+    out_chooser_filters:
+    - building_id == -1
+    - sector_id == 8
+    out_choosers: null
+    out_column: building_id
+    summary_table: "                  CHOICEMODELS ESTIMATION RESULTS            \
+        \      \n===================================================================\n\
+        Dep. Var.:                chosen   No. Observations:          2,000\nModel:\
+        \         Multinomial Logit   Df Residuals:              1,992\nMethod:  \
+        \     Maximum Likelihood   Df Model:                      8\nDate:       \
+        \          2018-11-20   Pseudo R-squ.:             0.816\nTime:          \
+        \            15:22   Pseudo R-bar-squ.:         0.814\nAIC:              \
+        \     2,524.084   Log-Likelihood:       -1,254.042\nBIC:                 \
+        \  2,568.892   LL-Null:              -6,802.395\n===============================================================================================\n\
+        \                                                coef   std err         z\
+        \     P>|z|   Conf. Int.\n-----------------------------------------------------------------------------------------------\n\
+        ln_block_groups_prop_sector_id_8              7.9661     0.375    21.248 \
+        \    0.000             \nln_non_residential_sqft                       0.2365\
+        \     0.012    19.949     0.000             \nln_zones_prop_building_type_id_5100\
+        \           2.3309     0.250     9.311     0.000             \nparcels_total_jobs_sum_400_linear\
+        \             0.7101     0.040    17.894     0.000             \nparcels_mean_income_ave_3600_flat\
+        \            -1.1702     0.277    -4.232     0.000             \nln_blocks_mean_acres\
+        \                          1.1587     0.049    23.413     0.000          \
+        \   \nblocks_mean_year_built                       -0.0125     0.002    -8.087\
+        \     0.000             \nln_block_groups_prop_building_type_id_1220   -0.7388\
+        \     0.890    -0.830     0.407             \n==============================================================================================="
+    tags: []
+    template: LargeMultinomialLogitStep
+    template_version: 0.1.dev15

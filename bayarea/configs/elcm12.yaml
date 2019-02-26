@@ -1,0 +1,61 @@
+modelmanager_version: 0.1.dev15
+
+saved_object:
+    alt_capacity: job_spaces
+    alt_filters: null
+    alt_sample_size: 30
+    alternatives: buildings
+    choice_column: building_id
+    chooser_filters:
+    - sector_id == 12
+    chooser_sample_size: 2000
+    chooser_size: null
+    choosers: jobs
+    constrained_choices: true
+    fitted_parameters:
+    - 4.398708881899213e-06
+    - 3.6191079671903963
+    - 1.024948395814895
+    - -0.0010743699146676061
+    - 0.6172484251223954
+    - 0.43287856953713794
+    - 2.065300202742578
+    - -0.06496664665469297
+    max_iter: null
+    model_expression: zones_total_jobs_10_md_offpeak_travel_time + zones_prop_sector_id_12
+        + zones_prop_sector_id_5 + year_built + ln_parcels_ratio_jobs_to_households
+        + ln_non_residential_sqft + ln_block_groups_prop_repm_id_multifamily + ln_blocks_total_jobs
+        - 1
+    name: elcm12
+    out_alt_filters: null
+    out_alternatives: null
+    out_chooser_filters:
+    - building_id == -1
+    - sector_id == 12
+    out_choosers: null
+    out_column: building_id
+    summary_table: "                  CHOICEMODELS ESTIMATION RESULTS            \
+        \      \n===================================================================\n\
+        Dep. Var.:                chosen   No. Observations:          2,000\nModel:\
+        \         Multinomial Logit   Df Residuals:              1,992\nMethod:  \
+        \     Maximum Likelihood   Df Model:                      8\nDate:       \
+        \          2018-11-20   Pseudo R-squ.:             0.868\nTime:          \
+        \            15:22   Pseudo R-bar-squ.:         0.867\nAIC:              \
+        \     1,813.215   Log-Likelihood:         -898.608\nBIC:                 \
+        \  1,858.022   LL-Null:              -6,802.395\n===============================================================================================\n\
+        \                                                coef   std err         z\
+        \     P>|z|   Conf. Int.\n-----------------------------------------------------------------------------------------------\n\
+        zones_total_jobs_10_md_offpeak_travel_time    0.0000     0.000     1.710 \
+        \    0.087             \nzones_prop_sector_id_12                       3.6191\
+        \     0.216    16.793     0.000             \nzones_prop_sector_id_5     \
+        \                   1.0249     0.333     3.081     0.002             \nyear_built\
+        \                                   -0.0011     0.000    -9.072     0.000\
+        \             \nln_parcels_ratio_jobs_to_households           0.6172     0.046\
+        \    13.514     0.000             \nln_non_residential_sqft              \
+        \         0.4329     0.022    19.702     0.000             \nln_block_groups_prop_repm_id_multifamily\
+        \      2.0653     0.579     3.566     0.000             \nln_blocks_total_jobs\
+        \                         -0.0650     0.046    -1.403     0.160          \
+        \   \n==============================================================================================="
+    tags: []
+    template: LargeMultinomialLogitStep
+    template_version: 0.1.dev15

@@ -1,0 +1,89 @@
+modelmanager_version: 0.1.dev14
+
+saved_object:
+    filters: (impval_per_unit > 0) & (repm_id == "retail")
+    fitted_parameters:
+    - -232.99259284693255
+    - 35.47545756910194
+    - 64.96575378441874
+    - 0.05978674544832525
+    - 0.00022972143478567708
+    - -1613.0320936229468
+    model:
+        fit_filters: (impval_per_unit > 0) & (repm_id == "retail")
+        fit_parameters:
+            Coefficient:
+                Intercept: -232.99259284693255
+                blocks_prop_sector_id_5: 64.96575378441874
+                parcels_density_jobs: 0.05978674544832525
+                parcels_mean_income_ave_4400_linear: 35.47545756910194
+                zone_districts_prop_building_type_id_5100: -1613.0320936229468
+                zones_mean_non_residential_sqft: 0.00022972143478567708
+            Std. Error:
+                Intercept: 231.0818769047311
+                blocks_prop_sector_id_5: 21.328172300701468
+                parcels_density_jobs: 0.28725214381485864
+                parcels_mean_income_ave_4400_linear: 23.062069492527286
+                zone_districts_prop_building_type_id_5100: 578.9709871308869
+                zones_mean_non_residential_sqft: 0.00033430636110956324
+            T-Score:
+                Intercept: -1.0082685668291902
+                blocks_prop_sector_id_5: 3.046006608933953
+                parcels_density_jobs: 0.20813333071888
+                parcels_mean_income_ave_4400_linear: 1.5382599371924066
+                zone_districts_prop_building_type_id_5100: -2.7860326846711088
+                zones_mean_non_residential_sqft: 0.6871584316350767
+        fit_rsquared: 0.024529303174992356
+        fit_rsquared_adj: 0.019866441335484764
+        fitted: true
+        model_expression: impval_per_unit ~ parcels_mean_income_ave_4400_linear +
+            blocks_prop_sector_id_5 + parcels_density_jobs + zones_mean_non_residential_sqft
+            + zone_districts_prop_building_type_id_5100 + 1
+        model_type: regression
+        name: RegressionModel
+        predict_filters: null
+        ytransform: null
+    model_expression: impval_per_unit ~ parcels_mean_income_ave_4400_linear + blocks_prop_sector_id_5
+        + parcels_density_jobs + zones_mean_non_residential_sqft + zone_districts_prop_building_type_id_5100
+        + 1
+    name: repm_retail
+    out_column: pred_retail_price
+    out_filters: null
+    out_tables: null
+    out_transform: null
+    summary_table: "                            OLS Regression Results           \
+        \                 \n==============================================================================\n\
+        Dep. Variable:        impval_per_unit   R-squared:                       0.025\n\
+        Model:                            OLS   Adj. R-squared:                  0.020\n\
+        Method:                 Least Squares   F-statistic:                     5.261\n\
+        Date:                Wed, 17 Oct 2018   Prob (F-statistic):           8.87e-05\n\
+        Time:                        19:59:22   Log-Likelihood:                -6916.3\n\
+        No. Observations:                1052   AIC:                         1.384e+04\n\
+        Df Residuals:                    1046   BIC:                         1.387e+04\n\
+        Df Model:                           5                                    \
+        \     \nCovariance Type:            nonrobust                            \
+        \             \n=============================================================================================================\n\
+        \                                                coef    std err         \
+        \ t      P>|t|      [0.025      0.975]\n-------------------------------------------------------------------------------------------------------------\n\
+        Intercept                                  -232.9926    231.082     -1.008\
+        \      0.314    -686.429     220.444\nparcels_mean_income_ave_4400_linear\
+        \          35.4755     23.062      1.538      0.124      -9.778      80.729\n\
+        blocks_prop_sector_id_5                      64.9658     21.328      3.046\
+        \      0.002      23.115     106.817\nparcels_density_jobs               \
+        \           0.0598      0.287      0.208      0.835      -0.504       0.623\n\
+        zones_mean_non_residential_sqft               0.0002      0.000      0.687\
+        \      0.492      -0.000       0.001\nzone_districts_prop_building_type_id_5100\
+        \ -1613.0321    578.971     -2.786      0.005   -2749.109    -476.955\n==============================================================================\n\
+        Omnibus:                     1901.313   Durbin-Watson:                   2.012\n\
+        Prob(Omnibus):                  0.000   Jarque-Bera (JB):          1924993.592\n\
+        Skew:                          12.373   Prob(JB):                        \
+        \ 0.00\nKurtosis:                     211.096   Cond. No.                \
+        \     2.16e+06\n==============================================================================\n\
+        \nWarnings:\n[1] Standard Errors assume that the covariance matrix of the\
+        \ errors is correctly specified.\n[2] The condition number is large, 2.16e+06.\
+        \ This might indicate that there are\nstrong multicollinearity or other numerical\
+        \ problems."
+    tables: buildings
+    tags: []
+    template: OLSRegressionStep
+    template_version: 0.1.dev14

@@ -1,0 +1,41 @@
+modelmanager_version: 0.1.dev15
+
+saved_object:
+    filters:
+    - income_quartile == 1
+    fitted_parameters:
+    - -13.418006061465142
+    - 3.1187033664648864
+    - 0.576251939092862
+    - -0.7960615648674326
+    model_expression: tenure_own ~ ln_age_of_head + cars + zero_carowner + 1
+    name: tenure_choice_model1
+    out_column: tenure
+    out_filters:
+    - building_id == -1
+    - income_quartile > 1
+    out_tables: households
+    out_transform: null
+    out_value_false: 2
+    out_value_true: 1
+    summary_table: "                           Logit Regression Results          \
+        \                 \n==============================================================================\n\
+        Dep. Variable:             tenure_own   No. Observations:                \
+        \  799\nModel:                          Logit   Df Residuals:            \
+        \          795\nMethod:                           MLE   Df Model:        \
+        \                    3\nDate:                Thu, 13 Dec 2018   Pseudo R-squ.:\
+        \                  0.2369\nTime:                        15:35:20   Log-Likelihood:\
+        \                -410.17\nconverged:                       True   LL-Null:\
+        \                       -537.49\n                                        LLR\
+        \ p-value:                 6.497e-55\n==================================================================================\n\
+        \                     coef    std err          z      P>|z|      [0.025  \
+        \    0.975]\n----------------------------------------------------------------------------------\n\
+        Intercept        -13.4180      1.153    -11.641      0.000     -15.677   \
+        \  -11.159\nln_age_of_head     3.1187      0.272     11.447      0.000   \
+        \    2.585       3.653\ncars               0.5763      0.121      4.757  \
+        \    0.000       0.339       0.814\nzero_carowner     -0.7961      0.286 \
+        \    -2.779      0.005      -1.358      -0.235\n=================================================================================="
+    tables: households_pums
+    tags: []
+    template: BinaryLogitStep
+    template_version: 0.1.dev15

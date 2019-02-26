@@ -1,0 +1,12 @@
+pytest
+pytest-cov
+python-coveralls
+google-cloud-storage
+geopandas
+seaborn
+shapely
+matplotlib
+datashader
+bokeh
+nbconvert
+nbformat

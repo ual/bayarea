@@ -1,0 +1,102 @@
+modelmanager_version: 0.1.dev14
+
+saved_object:
+    filters: (impval_per_unit > 0) & (repm_id == "office")
+    fitted_parameters:
+    - -37741.7729078904
+    - 21.366901261917803
+    - 0.349380246654587
+    - 0.011006114328824855
+    - -49.44521770477631
+    - 84.71992592491434
+    - 0.0010993239910543527
+    - 5.197122689210528
+    model:
+        fit_filters: (impval_per_unit > 0) & (repm_id == "office")
+        fit_parameters:
+            Coefficient:
+                Intercept: -37741.7729078904
+                blocks_median_acres: 5.197122689210528
+                blocks_prop_building_type_id_5100: -49.44521770477631
+                blocks_prop_sector_id_13: 84.71992592491434
+                blocks_total_jobs: 0.011006114328824855
+                parcels_mean_income_ave_2800_linear: 21.366901261917803
+                zones_mean_non_residential_sqft: 0.0010993239910543527
+                zones_total_jobs_25_md_offpeak_travel_time: 0.349380246654587
+            Std. Error:
+                Intercept: 11714.224597617424
+                blocks_median_acres: 0.7869487153841289
+                blocks_prop_building_type_id_5100: 20.39873732703199
+                blocks_prop_sector_id_13: 18.962322083024592
+                blocks_total_jobs: 0.00794365032458648
+                parcels_mean_income_ave_2800_linear: 11.284130832632256
+                zones_mean_non_residential_sqft: 0.00031653126698798705
+                zones_total_jobs_25_md_offpeak_travel_time: 0.10863550788077651
+            T-Score:
+                Intercept: -3.221875472284078
+                blocks_median_acres: 6.60414406633053
+                blocks_prop_building_type_id_5100: -2.4239352128551857
+                blocks_prop_sector_id_13: 4.467803339378837
+                blocks_total_jobs: 1.385523516154747
+                parcels_mean_income_ave_2800_linear: 1.8935354063892518
+                zones_mean_non_residential_sqft: 3.473034438320035
+                zones_total_jobs_25_md_offpeak_travel_time: 3.2160778135084436
+        fit_rsquared: 0.13102968841103446
+        fit_rsquared_adj: 0.12203147512534995
+        fitted: true
+        model_expression: impval_per_unit ~ parcels_mean_income_ave_2800_linear +
+            zones_total_jobs_25_md_offpeak_travel_time + blocks_total_jobs + blocks_prop_building_type_id_5100
+            + blocks_prop_sector_id_13 + zones_mean_non_residential_sqft + blocks_median_acres
+            + 1
+        model_type: regression
+        name: RegressionModel
+        predict_filters: null
+        ytransform: null
+    model_expression: impval_per_unit ~ parcels_mean_income_ave_2800_linear + zones_total_jobs_25_md_offpeak_travel_time
+        + blocks_total_jobs + blocks_prop_building_type_id_5100 + blocks_prop_sector_id_13
+        + zones_mean_non_residential_sqft + blocks_median_acres + 1
+    name: repm_office
+    out_column: pred_office_price
+    out_filters: null
+    out_tables: null
+    out_transform: null
+    summary_table: "                            OLS Regression Results           \
+        \                 \n==============================================================================\n\
+        Dep. Variable:        impval_per_unit   R-squared:                       0.131\n\
+        Model:                            OLS   Adj. R-squared:                  0.122\n\
+        Method:                 Least Squares   F-statistic:                     14.56\n\
+        Date:                Wed, 17 Oct 2018   Prob (F-statistic):           1.01e-17\n\
+        Time:                        19:26:13   Log-Likelihood:                -3837.2\n\
+        No. Observations:                 684   AIC:                             7690.\n\
+        Df Residuals:                     676   BIC:                             7727.\n\
+        Df Model:                           7                                    \
+        \     \nCovariance Type:            nonrobust                            \
+        \             \n==============================================================================================================\n\
+        \                                                 coef    std err        \
+        \  t      P>|t|      [0.025      0.975]\n--------------------------------------------------------------------------------------------------------------\n\
+        Intercept                                  -3.774e+04   1.17e+04     -3.222\
+        \      0.001   -6.07e+04   -1.47e+04\nparcels_mean_income_ave_2800_linear\
+        \           21.3669     11.284      1.894      0.059      -0.789      43.523\n\
+        zones_total_jobs_25_md_offpeak_travel_time     0.3494      0.109      3.216\
+        \      0.001       0.136       0.563\nblocks_total_jobs                  \
+        \            0.0110      0.008      1.386      0.166      -0.005       0.027\n\
+        blocks_prop_building_type_id_5100            -49.4452     20.399     -2.424\
+        \      0.016     -89.498      -9.393\nblocks_prop_sector_id_13           \
+        \           84.7199     18.962      4.468      0.000      47.488     121.952\n\
+        zones_mean_non_residential_sqft                0.0011      0.000      3.473\
+        \      0.001       0.000       0.002\nblocks_median_acres                \
+        \            5.1971      0.787      6.604      0.000       3.652       6.742\n\
+        ==============================================================================\n\
+        Omnibus:                      790.753   Durbin-Watson:                   1.618\n\
+        Prob(Omnibus):                  0.000   Jarque-Bera (JB):           121946.744\n\
+        Skew:                           5.291   Prob(JB):                        \
+        \ 0.00\nKurtosis:                      67.551   Cond. No.                \
+        \     4.98e+08\n==============================================================================\n\
+        \nWarnings:\n[1] Standard Errors assume that the covariance matrix of the\
+        \ errors is correctly specified.\n[2] The condition number is large, 4.98e+08.\
+        \ This might indicate that there are\nstrong multicollinearity or other numerical\
+        \ problems."
+    tables: buildings
+    tags: []
+    template: OLSRegressionStep
+    template_version: 0.1.dev14

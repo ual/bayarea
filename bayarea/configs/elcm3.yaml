@@ -1,0 +1,62 @@
+modelmanager_version: 0.1.dev15
+
+saved_object:
+    alt_capacity: job_spaces
+    alt_filters: null
+    alt_sample_size: 30
+    alternatives: buildings
+    choice_column: building_id
+    chooser_filters:
+    - sector_id == 3
+    chooser_sample_size: 2000
+    chooser_size: null
+    choosers: jobs
+    constrained_choices: true
+    fitted_parameters:
+    - -2.2796162799975215
+    - 1.5985079351726755e-05
+    - 0.558891294903699
+    - -0.8174480595362433
+    - -0.2555050819288554
+    - 0.3453625156597736
+    - 1.2593519758246312
+    - 0.00033236783236860576
+    - 4.580731241912778
+    max_iter: null
+    model_expression: block_groups_prop_building_type_id_1220 + zones_total_jobs_15_md_offpeak_travel_time
+        + ln_blocks_mean_acres + parcels_mean_income_ave_3600_linear + block_groups_density_buildings
+        + ln_non_residential_sqft + ln_parcels_prop_building_type_id_5100 + zones_total_jobs
+        + blocks_prop_sector_id_3 - 1
+    name: elcm3
+    out_alt_filters: null
+    out_alternatives: null
+    out_chooser_filters:
+    - building_id == -1
+    - sector_id == 3
+    out_choosers: null
+    out_column: building_id
+    summary_table: "                  CHOICEMODELS ESTIMATION RESULTS            \
+        \      \n===================================================================\n\
+        Dep. Var.:                chosen   No. Observations:          2,000\nModel:\
+        \         Multinomial Logit   Df Residuals:              1,991\nMethod:  \
+        \     Maximum Likelihood   Df Model:                      9\nDate:       \
+        \          2018-11-20   Pseudo R-squ.:             0.685\nTime:          \
+        \            15:22   Pseudo R-bar-squ.:         0.684\nAIC:              \
+        \     4,303.269   Log-Likelihood:       -2,142.634\nBIC:                 \
+        \  4,353.677   LL-Null:              -6,802.395\n===============================================================================================\n\
+        \                                                coef   std err         z\
+        \     P>|z|   Conf. Int.\n-----------------------------------------------------------------------------------------------\n\
+        block_groups_prop_building_type_id_1220      -2.2796     0.628    -3.630 \
+        \    0.000             \nzones_total_jobs_15_md_offpeak_travel_time    0.0000\
+        \     0.000     7.739     0.000             \nln_blocks_mean_acres       \
+        \                   0.5589     0.043    13.137     0.000             \nparcels_mean_income_ave_3600_linear\
+        \          -0.8174     0.020   -40.821     0.000             \nblock_groups_density_buildings\
+        \               -0.2555     0.033    -7.817     0.000             \nln_non_residential_sqft\
+        \                       0.3454     0.010    36.151     0.000             \n\
+        ln_parcels_prop_building_type_id_5100         1.2594     0.149     8.463 \
+        \    0.000             \nzones_total_jobs                              0.0003\
+        \     0.000     2.936     0.003             \nblocks_prop_sector_id_3    \
+        \                   4.5807     0.111    41.305     0.000             \n==============================================================================================="
+    tags: []
+    template: LargeMultinomialLogitStep
+    template_version: 0.1.dev15

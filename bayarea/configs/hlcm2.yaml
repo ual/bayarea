@@ -1,0 +1,60 @@
+modelmanager_version: 0.1.dev15
+
+saved_object:
+    alt_capacity: residential_units
+    alt_filters: residential_units > 0
+    alt_sample_size: 30
+    alternatives: buildings
+    choice_column: building_id
+    chooser_filters:
+    - (recent_mover == 1) & (income_quartile > 1)
+    chooser_sample_size: null
+    chooser_size: null
+    choosers: households
+    constrained_choices: true
+    fitted_parameters:
+    - -0.41883118622484844
+    - 7.453931069684879
+    - 0.26424499819592845
+    - 1.045206205364542
+    - 0.5114137651251437
+    - 1.050306568278274
+    - -0.35960599659145576
+    - 4.814259644949562
+    max_iter: null
+    model_expression: ln_value_per_unit + ln_year_built + persons:ln_residential_sqft
+        + zero_carowner:ln_zones_total_jobs_5_am_peak_travel_time + carowner:ln_zones_total_jobs_5_am_peak_travel_time
+        + has_children:ln_blocks_prop_building_type_id_1110 + no_children:ln_blocks_prop_building_type_id_1110
+        + ln_parcels_ratio_households_to_residential_units - 1
+    name: hlcm2
+    out_alt_filters: null
+    out_alternatives: null
+    out_chooser_filters:
+    - building_id == -1
+    - income_quartile > 1
+    out_choosers: null
+    out_column: building_id
+    summary_table: "                  CHOICEMODELS ESTIMATION RESULTS            \
+        \      \n===================================================================\n\
+        Dep. Var.:                chosen   No. Observations:            619\nModel:\
+        \         Multinomial Logit   Df Residuals:                611\nMethod:  \
+        \     Maximum Likelihood   Df Model:                      8\nDate:       \
+        \          2018-11-20   Pseudo R-squ.:             0.189\nTime:          \
+        \            15:21   Pseudo R-bar-squ.:         0.186\nAIC:              \
+        \     3,428.760   Log-Likelihood:       -1,706.380\nBIC:                 \
+        \  3,464.185   LL-Null:              -2,105.341\n============================================================================================================\n\
+        \                                                             coef   std err\
+        \         z     P>|z|   Conf. Int.\n------------------------------------------------------------------------------------------------------------\n\
+        ln_value_per_unit                                         -0.4188     0.053\
+        \    -7.931     0.000             \nln_year_built                        \
+        \                      7.4539     0.118    63.200     0.000             \n\
+        persons:ln_residential_sqft                                0.2642     0.006\
+        \    47.142     0.000             \nzero_carowner:ln_zones_total_jobs_5_am_peak_travel_time\
+        \    1.0452     0.064    16.412     0.000             \ncarowner:ln_zones_total_jobs_5_am_peak_travel_time\
+        \         0.5114     0.060     8.453     0.000             \nhas_children:ln_blocks_prop_building_type_id_1110\
+        \          1.0503     0.324     3.237     0.001             \nno_children:ln_blocks_prop_building_type_id_1110\
+        \          -0.3596     0.296    -1.216     0.224             \nln_parcels_ratio_households_to_residential_units\
+        \           4.8143     0.500     9.634     0.000             \n============================================================================================================"
+    tags: []
+    template: LargeMultinomialLogitStep
+    template_version: 0.1.dev15

@@ -1,0 +1,45 @@
+modelmanager_version: 0.1.dev15
+
+saved_object:
+    filters: null
+    fitted_parameters:
+    - -11.885340550672511
+    - -2.3867571499835045
+    - -1.6791406169445604
+    - -1.1993184077104577
+    - 3.2439056662470995
+    - 0.7525433291322171
+    model_expression: tenure_own ~ income_quartile_1 + income_quartile_2 + income_quartile_3
+        + ln_age_of_head + cars + 1
+    name: tenure_choice_model
+    out_column: tenure
+    out_filters:
+    - building_id == -1
+    out_tables: households
+    out_transform: null
+    out_value_false: 2
+    out_value_true: 1
+    summary_table: "                           Logit Regression Results          \
+        \                 \n==============================================================================\n\
+        Dep. Variable:             tenure_own   No. Observations:                \
+        \ 3194\nModel:                          Logit   Df Residuals:            \
+        \         3188\nMethod:                           MLE   Df Model:        \
+        \                    5\nDate:                Thu, 13 Dec 2018   Pseudo R-squ.:\
+        \                  0.3202\nTime:                        15:35:19   Log-Likelihood:\
+        \                -1381.4\nconverged:                       True   LL-Null:\
+        \                       -2031.9\n                                        LLR\
+        \ p-value:                3.856e-279\n=====================================================================================\n\
+        \                        coef    std err          z      P>|z|      [0.025\
+        \      0.975]\n-------------------------------------------------------------------------------------\n\
+        Intercept           -11.8853      0.626    -18.995      0.000     -13.112\
+        \     -10.659\nincome_quartile_1    -2.3868      0.167    -14.304      0.000\
+        \      -2.714      -2.060\nincome_quartile_2    -1.6791      0.161    -10.451\
+        \      0.000      -1.994      -1.364\nincome_quartile_3    -1.1993      0.161\
+        \     -7.430      0.000      -1.516      -0.883\nln_age_of_head        3.2439\
+        \      0.151     21.484      0.000       2.948       3.540\ncars         \
+        \         0.7525      0.058     12.999      0.000       0.639       0.866\n\
+        ====================================================================================="
+    tables: households_pums
+    tags: []
+    template: BinaryLogitStep
+    template_version: 0.1.dev15

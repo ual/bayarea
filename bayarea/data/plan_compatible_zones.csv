@@ -1,0 +1,93 @@
+plan_zone_id,plan_id,plan_designation_name,zoning_id,zoning_name,cost_in_city,cost_in_ugb,cost_outside_ugb,probability,cost_notes
+0,1.0,COB -- CENTRAL BUSINESS DISTRICT -- B,1.0,COB -- CENTRAL BUSINESS DISTRICT -- C-1,3000.0,3000.0,-99999.99,1.0,zone change
+1,2.0,COB -- HWY COMMERCIAL -- C,2.0,COB -- HWY COMMERCIAL DISTRICT -- C-2,3000.0,3000.0,-99999.99,1.0,zone change
+2,3.0,COB -- LIGHT INDUSTRIAL -- I,3.0,COB -- LIGHT INDUSTRIAL DISTRICT -- LI,3000.0,3000.0,-99999.99,1.0,zone change
+3,4.0,COB -- PARK/RECREATION -- P,4.0,COB -- PARK/RECREATION/OPEN SPACE DISTRICT -- PRO,3000.0,3000.0,-99999.99,1.0,zone change
+4,5.0,COB -- PUBLIC FACILITY -- W,7.0,COB -- PUBLIC FACILITY -- W,3000.0,3000.0,-99999.99,1.0,zone change
+5,6.0,COB -- TRADITIONAL RESIDENTIAL -- L,5.0,COB -- TRADITIONAL MED DENSITY RESIDENTIAL -- TMR,3000.0,3000.0,-99999.99,1.0,zone change
+6,6.0,COB -- TRADITIONAL RESIDENTIAL -- L,6.0,COB -- TRADITIONAL RESIDENTIAL -- TR,3000.0,3000.0,-99999.99,1.0,zone change
+7,7.0,MP EUG -- Campus Industrial -- O,13.0,EUG -- CAMPUS INDUSTRIAL -- I-1,3983.95,5913.25,-99999.99,1.0,zone change
+8,7.0,MP EUG -- Campus Industrial -- O,9.0,EUG -- NEIGHBORHOOD COMMERCIAL -- C-1,3983.95,5913.25,-99999.99,1.0,zone change
+9,7.0,MP EUG -- Campus Industrial -- O,11.0,EUG -- COMMERCIAL/INDUSTRIAL -- C-4,3983.95,5913.25,-99999.99,1.0,zone change
+10,8.0,MP EUG -- Commercial -- C,9.0,EUG -- NEIGHBORHOOD COMMERCIAL -- C-1,3983.95,5913.25,-99999.99,1.0,zone change
+11,8.0,MP EUG -- Commercial -- C,10.0,EUG -- COMMUNITY COMMERCIAL -- C-2,3983.95,5913.25,-99999.99,1.0,zone change
+12,8.0,MP EUG -- Commercial -- C,11.0,EUG -- COMMERCIAL/INDUSTRIAL -- C-4,3983.95,5913.25,-99999.99,1.0,zone change
+13,8.0,MP EUG -- Commercial -- C,12.0,EUG -- GENERAL OFFICE -- GO,3983.95,5913.25,-99999.99,1.0,zone change
+14,9.0,MP EUG -- Commercial Mixed Use -- D,9.0,EUG -- NEIGHBORHOOD COMMERCIAL -- C-1,3983.95,5913.25,-99999.99,1.0,zone change
+15,9.0,MP EUG -- Commercial Mixed Use -- D,12.0,EUG -- GENERAL OFFICE -- GO,3983.95,5913.25,-99999.99,1.0,zone change
+16,10.0,MP EUG -- Government & Education -- E & X,16.0,EUG -- PUBLIC LAND -- PL,3983.95,5913.25,-99999.99,1.0,zone change
+17,10.0,MP EUG -- Government & Education -- E & X,9.0,EUG -- NEIGHBORHOOD COMMERCIAL -- C-1,3983.95,5913.25,-99999.99,1.0,zone change
+18,11.0,MP EUG -- Heavy Industrial -- Z,15.0,EUG -- HEAVY INDUSTRIAL -- I-3,3983.95,5913.25,-99999.99,1.0,zone change
+19,11.0,MP EUG -- Heavy Industrial -- Z,9.0,EUG -- NEIGHBORHOOD COMMERCIAL -- C-1,3983.95,5913.25,-99999.99,1.0,zone change
+20,12.0,MP EUG -- High Density Res Mixed Use -- S,9.0,EUG -- NEIGHBORHOOD COMMERCIAL -- C-1,3983.95,5913.25,-99999.99,1.0,zone change
+21,13.0,MP EUG -- High Density Residential -- H,21.0,EUG -- LIMITED HIGH-DENSITY RESIDENTIAL -- R-3,3983.95,5913.25,-99999.99,1.0,zone change
+22,13.0,MP EUG -- High Density Residential -- H,22.0,EUG -- HIGH-DENSITY RESIDENTIAL -- R-4,3983.95,5913.25,-99999.99,1.0,zone change
+23,13.0,MP EUG -- High Density Residential -- H,9.0,EUG -- NEIGHBORHOOD COMMERCIAL -- C-1,3983.95,5913.25,-99999.99,1.0,zone change
+24,14.0,MP EUG -- Light Medium Industrial -- I,14.0,EUG -- LIGHT-MEDIUM INDUSTRIAL -- I-2,3983.95,5913.25,-99999.99,1.0,zone change
+25,14.0,MP EUG -- Light Medium Industrial -- I,9.0,EUG -- NEIGHBORHOOD COMMERCIAL -- C-1,3983.95,5913.25,-99999.99,1.0,zone change
+26,14.0,MP EUG -- Light Medium Industrial -- I,13.0,EUG -- CAMPUS INDUSTRIAL -- I-1,3983.95,5913.25,-99999.99,1.0,zone change
+27,15.0,MP EUG -- Low Density Residential -- L,18.0,EUG -- LOW-DENSITY RESIDENTIAL -- R-1,3983.95,5913.25,-99999.99,1.0,zone change
+28,15.0,MP EUG -- Low Density Residential -- L,19.0,EUG -- ROWHOUSE -- R-1.5,3983.95,5913.25,-99999.99,1.0,zone change
+29,15.0,MP EUG -- Low Density Residential -- L,9.0,EUG -- NEIGHBORHOOD COMMERCIAL -- C-1,3983.95,5913.25,-99999.99,1.0,zone change
+30,16.0,MP EUG -- Major Retail Center -- K,89.0,EUG -- MAJOR COMMERCIAL -- C-3,3983.95,5913.25,-99999.99,1.0,zone change
+31,16.0,MP EUG -- Major Retail Center -- K,9.0,EUG -- NEIGHBORHOOD COMMERCIAL -- C-1,3983.95,5913.25,-99999.99,1.0,zone change
+32,17.0,MP EUG -- Medium Density Res Mixed Use -- U,9.0,EUG -- NEIGHBORHOOD COMMERCIAL -- C-1,3983.95,5913.25,-99999.99,1.0,zone change
+33,18.0,MP EUG -- Medium Density Residential -- M,20.0,EUG -- MEDIUM-DENSITY RESIDENTIAL -- R-2,3983.95,5913.25,-99999.99,1.0,zone change
+34,18.0,MP EUG -- Medium Density Residential -- M,9.0,EUG -- NEIGHBORHOOD COMMERCIAL -- C-1,3983.95,5913.25,-99999.99,1.0,zone change
+35,19.0,MP EUG -- Mixed Use -- MU,9.0,EUG -- NEIGHBORHOOD COMMERCIAL -- C-1,3983.95,5913.25,-99999.99,1.0,zone change
+36,20.0,MP EUG -- Natural Resource -- N,9.0,EUG -- NEIGHBORHOOD COMMERCIAL -- C-1,3983.95,5913.25,-99999.99,1.0,zone change
+37,21.0,MP EUG -- Parks and Open Space -- P,9.0,EUG -- NEIGHBORHOOD COMMERCIAL -- C-1,3983.95,5913.25,-99999.99,1.0,zone change
+38,22.0,MP EUG -- Parks/OpenSpace Mixed Use -- B,9.0,EUG -- NEIGHBORHOOD COMMERCIAL -- C-1,3983.95,5913.25,-99999.99,1.0,zone change
+39,23.0,MP EUG -- Special Heavy Industrial -- Y,15.0,EUG -- HEAVY INDUSTRIAL -- I-3,3983.95,5913.25,-99999.99,1.0,zone change
+40,23.0,MP EUG -- Special Heavy Industrial -- Y,9.0,EUG -- NEIGHBORHOOD COMMERCIAL -- C-1,3983.95,5913.25,-99999.99,1.0,zone change
+41,24.0,MP EUG -- University Research -- V,9.0,EUG -- NEIGHBORHOOD COMMERCIAL -- C-1,3983.95,5913.25,-99999.99,1.0,zone change
+42,25.0,LC -- AGRICULTURE -- A,0.0,(current zone only),-99999.99,-99999.99,5200.0,1.0,zone change
+43,26.0,LC -- AIRPORT -- AIR,43.0,LC -- AIRPORT OPERATIONS -- AO,-99999.99,-99999.99,5200.0,1.0,zone change
+44,27.0,LC -- COMMERCIAL -- C,46.0,LC -- RURAL COMMERCIAL -- CR,-99999.99,-99999.99,5200.0,1.0,zone change
+45,28.0,LC -- FOREST -- F,0.0,(current zone only),-99999.99,-99999.99,5200.0,1.0,zone change
+46,29.0,LC -- INDUSTRIAL -- I,59.0,LC -- RURAL INDUSTRIAL -- RI,-99999.99,-99999.99,5200.0,1.0,zone change
+47,30.0,LC -- MARGINAL -- ML,53.0,LC -- MARGINAL LANDS -- ML,-99999.99,-99999.99,5200.0,1.0,zone change
+48,31.0,LC -- NATURAL RESOURCE : MINERAL -- NR:M,57.0,LC -- QUARRY AND MINING OPERATIONS -- QM,-99999.99,-99999.99,5200.0,1.0,zone change
+49,31.0,LC -- NATURAL RESOURCE : MINERAL -- NR:M,67.0,"LC -- SAND, GRAVEL AND ROCK PRODUCTS -- SG",-99999.99,-99999.99,5200.0,1.0,zone change
+50,32.0,LC -- NATURAL RESOURCE : WILDLIFE -- NR:W,54.0,LC -- NATURAL RESOURCE -- NR,-99999.99,-99999.99,5200.0,1.0,zone change
+51,33.0,LC -- NATURAL RESOURCE CONSERVATION AREA -- NR:CA,54.0,LC -- NATURAL RESOURCE -- NR,-99999.99,-99999.99,5200.0,1.0,zone change
+52,34.0,LC -- NON RESOURCE -- NRES,0.0,(current zone only),-99999.99,-99999.99,5200.0,1.0,zone change
+53,35.0,LC -- PARKS -- P,56.0,LC -- PARK AND RECREATION -- PR,-99999.99,-99999.99,5200.0,1.0,zone change
+54,36.0,LC -- PUBLIC FACILITY -- PF,60.0,LC -- RURAL PUBLIC FACILITY -- RPF,-99999.99,-99999.99,5200.0,1.0,zone change
+55,37.0,LC -- RESIDENTIAL -- R,0.0,(current zone only),-99999.99,-99999.99,5200.0,1.0,zone change
+56,38.0,MP SPR -- Agriculture -- A,0.0,(current zone only),6880.4,13063.85,-99999.99,1.0,zone change
+57,39.0,MP SPR -- Campus Industrial -- O,71.0,SPR -- CAMPUS INDUSTRIAL -- CI,6880.4,13063.85,-99999.99,1.0,zone change
+58,40.0,MP SPR -- Commercial -- C,70.0,SPR -- COMMUNITY COMMERCIAL -- CC,6880.4,13063.85,-99999.99,1.0,zone change
+59,40.0,MP SPR -- Commercial -- C,80.0,SPR -- MEDICAL SERVICES -- MS,6880.4,13063.85,-99999.99,1.0,zone change
+60,40.0,MP SPR -- Commercial -- C,83.0,SPR -- NEIGHBORHOOD COMMERCIAL -- NC,6880.4,13063.85,-99999.99,1.0,zone change
+61,41.0,MP SPR -- Commercial Mixed Use -- D,81.0,SPR -- MIXED USE COMMERCIAL -- MUC,6880.4,13063.85,-99999.99,1.0,zone change
+62,42.0,MP SPR -- Forest Land -- F,0.0,(current zone only),6880.4,13063.85,-99999.99,1.0,zone change
+63,43.0,MP SPR -- Education -- E,84.0,SPR -- PUBLIC LAND & OPEN SPACE -- PL,6880.4,13063.85,-99999.99,1.0,zone change
+64,44.0,MP SPR -- Government -- X,84.0,SPR -- PUBLIC LAND & OPEN SPACE -- PL,6880.4,13063.85,-99999.99,1.0,zone change
+65,45.0,MP SPR -- Heavy Industrial -- Z,74.0,SPR -- HEAVY INDUSTRIAL -- HI,6880.4,13063.85,-99999.99,1.0,zone change
+66,46.0,MP SPR -- High Density Residential -- H,73.0,SPR -- HIGH DENSITY RESIDENTIAL -- HD,6880.4,13063.85,-99999.99,1.0,zone change
+67,47.0,MP SPR -- Light Med Ind Mixed Use -- W,69.0,SPR -- BOOTH KELLY MIXED USE -- BK,6880.4,13063.85,-99999.99,1.0,zone change
+68,48.0,MP SPR -- Light Medium Industrial -- I,77.0,SPR -- LIGHT MEDIUM INDUSTRIAL -- LMI,6880.4,13063.85,-99999.99,1.0,zone change
+69,49.0,MP SPR -- Low Density Residential -- L,75.0,SPR -- LOW DENSITY RESIDENTIAL -- LD,6880.4,13063.85,-99999.99,1.0,zone change
+70,50.0,MP SPR -- Major Retail Center -- K,79.0,SPR -- MAJOR RETAIL COMMERCIAL -- MR,6880.4,13063.85,-99999.99,1.0,zone change
+71,51.0,MP SPR -- Medium Density Res Mixed Use -- U,82.0,SPR -- MIXED USE RESIDENTIAL -- MUR,6880.4,13063.85,-99999.99,1.0,zone change
+72,52.0,MP SPR -- Medium Density Residential -- M,78.0,SPR -- MEDIUM DENSITY RESIDENTIAL -- MD,6880.4,13063.85,-99999.99,1.0,zone change
+73,53.0,MP SPR -- Mixed Use -- MU,81.0,SPR -- MIXED USE COMMERCIAL -- MUC,6880.4,13063.85,-99999.99,1.0,zone change
+74,54.0,MP SPR -- Nodal Development -- ND,81.0,SPR -- MIXED USE COMMERCIAL -- MUC,6880.4,13063.85,-99999.99,1.0,zone change
+75,55.0,MP SPR -- Nodal Development/Mixed Use -- ND,81.0,SPR -- MIXED USE COMMERCIAL -- MUC,6880.4,13063.85,-99999.99,1.0,zone change
+76,56.0,MP SPR -- Parks and Open Space -- P,84.0,SPR -- PUBLIC LAND & OPEN SPACE -- PL,6880.4,13063.85,-99999.99,1.0,zone change
+77,57.0,MP SPR -- Rural Residential -- R,0.0,(current zone only),6880.4,13063.85,-99999.99,1.0,zone change
+78,58.0,MP SPR -- Sand and Gravel -- G,85.0,SPR -- QUARRY & MINE OPERATIONS -- QM,6880.4,13063.85,-99999.99,1.0,zone change
+79,59.0,MP SPR -- Special Heavy Industrial -- Y,86.0,SPR -- SPECIAL HEAVY INDUSTRIAL -- SH,6880.4,13063.85,-99999.99,1.0,zone change
+80,60.0,MP LC -- Agriculture -- A,0.0,(current zone only),-99999.99,-99999.99,5200.0,1.0,zone change
+81,61.0,MP LC -- Airport Reserve -- T,43.0,LC -- AIRPORT OPERATIONS -- AO,-99999.99,-99999.99,5200.0,1.0,zone change
+82,62.0,MP LC -- Forest Land -- F,0.0,(current zone only),-99999.99,-99999.99,5200.0,1.0,zone change
+83,63.0,MP LC -- Government -- X,43.0,LC -- AIRPORT OPERATIONS -- AO,-99999.99,-99999.99,5200.0,1.0,zone change
+84,64.0,MP LC -- Natural Resource -- N,54.0,LC -- NATURAL RESOURCE -- NR,-99999.99,-99999.99,5200.0,1.0,zone change
+85,65.0,MP LC -- Parks and Open Space -- P,56.0,LC -- PARK AND RECREATION -- PR,-99999.99,-99999.99,5200.0,1.0,zone change
+86,66.0,MP LC -- Rural Residential -- R,0.0,(current zone only),-99999.99,-99999.99,5200.0,1.0,zone change
+87,67.0,MP LC -- Sand and Gravel -- G,67.0,"LC -- SAND, GRAVEL AND ROCK PRODUCTS -- SG",-99999.99,-99999.99,5200.0,1.0,zone change
+88,68.0,MP LC -- Rural Commercial -- Q,46.0,LC -- RURAL COMMERCIAL -- CR,-99999.99,-99999.99,5200.0,1.0,zone change
+89,69.0,MP LC -- Rural Industrial -- J,59.0,LC -- RURAL INDUSTRIAL -- RI,-99999.99,-99999.99,5200.0,1.0,zone change
+90,,,,,,,,,
+91,,"<class 'list'>: [42.0, 34.0, 70.0, 71.0, 0.0, 72.0, 25.0, 37.0, 38.0, 66.0]",,,,,,,

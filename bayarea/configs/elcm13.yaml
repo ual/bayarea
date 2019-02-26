@@ -1,0 +1,55 @@
+modelmanager_version: 0.1.dev15
+
+saved_object:
+    alt_capacity: job_spaces
+    alt_filters: null
+    alt_sample_size: 30
+    alternatives: buildings
+    choice_column: building_id
+    chooser_filters:
+    - sector_id == 13
+    chooser_sample_size: 2000
+    chooser_size: null
+    choosers: jobs
+    constrained_choices: true
+    fitted_parameters:
+    - 11.633363812582353
+    - 0.45736431461160726
+    - -0.011882141446236963
+    - 0.4658532283662685
+    - 0.7036487744948814
+    - -5.088226539075768
+    max_iter: null
+    model_expression: ln_zones_prop_sector_id_13 + ln_parcels_prop_building_type_id_5100
+        + year_built + ln_non_residential_sqft + ln_blocks_median_acres + zone_subdistricts_prop_building_type_id_1220
+        - 1
+    name: elcm13
+    out_alt_filters: null
+    out_alternatives: null
+    out_chooser_filters:
+    - building_id == -1
+    - sector_id == 13
+    out_choosers: null
+    out_column: building_id
+    summary_table: "                  CHOICEMODELS ESTIMATION RESULTS            \
+        \      \n===================================================================\n\
+        Dep. Var.:                chosen   No. Observations:          2,000\nModel:\
+        \         Multinomial Logit   Df Residuals:              1,994\nMethod:  \
+        \     Maximum Likelihood   Df Model:                      6\nDate:       \
+        \          2018-11-20   Pseudo R-squ.:             0.805\nTime:          \
+        \            15:23   Pseudo R-bar-squ.:         0.804\nAIC:              \
+        \     2,667.591   Log-Likelihood:       -1,327.796\nBIC:                 \
+        \  2,701.197   LL-Null:              -6,802.395\n==================================================================================================\n\
+        \                                                  coef   std err        \
+        \  z     P>|z|   Conf. Int.\n--------------------------------------------------------------------------------------------------\n\
+        ln_zones_prop_sector_id_13                     11.6334     0.277     42.003\
+        \     0.000             \nln_parcels_prop_building_type_id_5100          \
+        \ 0.4574     0.181      2.525     0.012             \nyear_built         \
+        \                            -0.0119     0.000   -222.461     0.000      \
+        \       \nln_non_residential_sqft                         0.4659     0.011\
+        \     41.917     0.000             \nln_blocks_median_acres              \
+        \            0.7036     0.049     14.507     0.000             \nzone_subdistricts_prop_building_type_id_1220\
+        \   -5.0882     1.128     -4.511     0.000             \n=================================================================================================="
+    tags: []
+    template: LargeMultinomialLogitStep
+    template_version: 0.1.dev15
