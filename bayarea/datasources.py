@@ -22,8 +22,8 @@ if 'data_directory' in orca.list_injectables():
 def parcels():
     df = pd.read_csv(
         d + 'parcel_attr.csv',
-        index_col='primary_id',
-        dtype={'primary_id': int, 'block_id': str})
+        index_col='parcel_id',
+        dtype={'parcel_id': int, 'block_id': str})
     return df
 
 
