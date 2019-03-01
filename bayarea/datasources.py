@@ -8,7 +8,7 @@ import pandas as pd
 
 # Set data directory
 
-d = './data/'
+d = './data/fake_data_directory'
 
 if 'data_directory' in orca.list_injectables():
     d = orca.get_injectable('data_directory')
