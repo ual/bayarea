@@ -12,19 +12,19 @@ from setuptools import setup, find_packages
 with open('README.md', 'r') as f:
     long_description = f.read()
 
-with open('lcog/requirements.txt') as f:
+with open('bayarea/requirements.txt') as f:
     requirements_lines = f.readlines()
 install_requires = [r.strip() for r in requirements_lines]
 
 setup(
-    name='lcog',
+    name='bayarea',
     version='0.1dev',
-    description='LCOG UrbanSim implementation',
+    description='Bay Area UrbanSim implementation',
     long_description=long_description,
-    author='LCOG / UrbanSim Inc.',
+    author='Urban Analytics Lab / UrbanSim Inc.',
     author_email='info@urbansim.com',
     license='BSD',
-    url='https://github.com/urbansim/lcog',
+    url='https://github.com/ual/bayarea',
     classifiers=[
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.4',
