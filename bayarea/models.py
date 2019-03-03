@@ -10,30 +10,196 @@ import numpy as np
 import yaml
 from developer import proposal_select
 from collections import OrderedDict
+from urbansim.utils import networks
+
+# ~ @orca.step()
+# ~ def build_networks(parcels, nodes, edges, craigslist):
+    # ~ nodes, edges = nodes.to_frame(), edges.to_frame()
+    # ~ print('Number of nodes is %s.' % len(nodes))
+    # ~ print('Number of edges is %s.' % len(edges))
+    # ~ net = pdna.Network(nodes["x"], nodes["y"], edges["from"], edges["to"],
+                           # ~ edges[["weight"]])
+
+    # ~ precompute_distance = 5000
+    # ~ print('Precomputing network for distance %s.' % precompute_distance)
+    # ~ print('Network precompute starting.')
+    # ~ net.precompute(precompute_distance)
+    # ~ print('Network precompute done.')
+
+    # ~ parcels = parcels.local
+    # ~ parcels['node_id'] = net.get_node_ids(parcels['x'], parcels['y'])
+    # ~ orca.add_table("parcels", parcels)
+    # ~ orca.add_injectable("net", net)
+
+    # ~ craigslist = craigslist.local
+    # ~ craigslist['node_id'] = net.get_node_ids(craigslist['longitude'], craigslist['latitude'])
+    # ~ orca.add_table('craigslist', craigslist)
 
 
 @orca.step()
-def build_networks(parcels, nodes, edges, craigslist):
-    nodes, edges = nodes.to_frame(), edges.to_frame()
-    print('Number of nodes is %s.' % len(nodes))
-    print('Number of edges is %s.' % len(edges))
-    net = pdna.Network(nodes["x"], nodes["y"], edges["from"], edges["to"],
-                           edges[["weight"]])
+def initialize_network_small():
+    """
+    This will be turned into a data loading template.
+    """
 
-    precompute_distance = 5000
-    print('Precomputing network for distance %s.' % precompute_distance)
-    print('Network precompute starting.')
-    net.precompute(precompute_distance)
-    print('Network precompute done.')
+    @orca.injectable('netsmall', cache=True)
+    def build_networksmall(parcels, craigslist, nodessmall, edgessmall):
+        netsmall = pdna.Network(nodessmall.x, nodessmall.y, edgessmall.u,
+                                 edgessmall.v, edgessmall[['length']], twoway=True)
+        netsmall.precompute(25000)
+        
+        parcels = parcels.local
+        parcels['node_id_small'] = netsmall.get_node_ids(parcels['x'], parcels['y'])
+        orca.add_table("parcels", parcels)
+        orca.add_injectable("netsmall", netsmall)
 
-    parcels = parcels.local
-    parcels['node_id'] = net.get_node_ids(parcels['x'], parcels['y'])
-    orca.add_table("parcels", parcels)
-    orca.add_injectable("net", net)
+        craigslist = craigslist.local
+        craigslist['node_id_small'] = netsmall.get_node_ids(craigslist['longitude'], craigslist['latitude'])
+        orca.add_table('craigslist', craigslist)
 
-    craigslist = craigslist.local
-    craigslist['node_id'] = net.get_node_ids(craigslist['longitude'], craigslist['latitude'])
-    orca.add_table('craigslist', craigslist)
+
+@orca.step()
+def initialize_network_walk():
+    """
+    This will be turned into a data loading template.
+    """
+
+    @orca.injectable('netwalk', cache=False)
+    def build_networkwalk(parcels, craigslist, nodeswalk, edgeswalk):
+        netwalk = pdna.Network(nodessmall.x, nodessmall.y, edgessmall.u,
+                                 edgessmall.v, edgessmall[['length']], twoway=True)
+        netwalk.precompute(5000)
+        
+        parcels = parcels.local
+        parcels['node_id_walk'] = netwalk.get_node_ids(parcels['x'], parcels['y'])
+        orca.add_table("parcels", parcels)
+        orca.add_injectable("netwalk", netwalk)
+
+        craigslist = craigslist.local
+        craigslist['node_id_walk'] = netwalk.get_node_ids(craigslist['longitude'], craigslist['latitude'])
+        orca.add_table('craigslist', craigslist)
+
+
+
+@orca.step()
+def initialize_network_beam(parcels, craigslist):
+    """
+    This will be turned into a data loading template.
+    """
+
+    @orca.injectable('netbeam', cache=True)
+    def build_networkbeam(nodesbeam, edgesbeam, parcels, craigslist):
+        nodesbeam, edgesbeam = nodesbeam.to_frame(), edgesbeam.to_frame()
+        print('Number of nodes is %s.' % len(nodesbeam))
+        print('Number of edges is %s.' % len(edgesbeam))
+        #nodesbeam = orca.get_table('nodesbeam',nodesbeam).local
+        #edgesbeam = orca.get_table('edgeswalk',edgeswalk).local
+        #edgesbeam = edgesbeam[
+        #    (edgesbeam['hour'] == 8) & (edgesbeam['stat'] == 'AVG')]
+        netbeam = pdna.Network(
+            nodesbeam['lon'], nodesbeam['lat'], edgesbeam['from'],
+            edgesbeam['to'], edgesbeam[['traveltime']], twoway=False)
+        netbeam.precompute(1000)
+        #return netbeam
+        
+        parcels = parcels.local
+        parcels['node_id_beam'] = netbeam.get_node_ids(parcels['x'], parcels['y'])
+        orca.add_table("parcels", parcels)
+        orca.add_injectable("netbeam", netbeam)
+
+        craigslist = craigslist.local
+        craigslist['node_id_beam'] = netbeam.get_node_ids(craigslist['longitude'], craigslist['latitude'])
+        orca.add_table('craigslist', craigslist)
+
+@orca.step()
+def network_aggregations_small(netsmall):
+    """
+    This will be turned into a network aggregation template.
+    """
+    nodessmall = networks.from_yaml(
+        netsmall, 'network_aggregations_small.yaml')
+    nodessmall = nodessmall.fillna(0)
+    
+    # new variables
+    print('compute additional aggregation variables')
+    nodessmall['pop_jobs_ratio_10000'] = (nodessmall['pop_10000'] / (nodessmall['jobs_10000'])).fillna(0)
+    nodessmall['pop_jobs_ratio_25000'] = (nodessmall['pop_25000'] / (nodessmall['jobs_25000'])).fillna(0)
+    # fill inf and nan with median
+    nodessmall['pop_jobs_ratio_10000'] = nodessmall['pop_jobs_ratio_10000'].replace([np.inf, -np.inf], np.nan).fillna(
+        nodessmall['pop_jobs_ratio_10000'].median)
+    nodessmall['pop_jobs_ratio_25000'] = nodessmall['pop_jobs_ratio_25000'].replace([np.inf, -np.inf], np.nan).fillna(
+        nodessmall['pop_jobs_ratio_25000'].median)
+    
+    # end of addition
+    
+    print(nodessmall.describe())
+    orca.add_table('nodessmall', nodessmall)
+
+
+@orca.step()
+def network_aggregations_walk(netwalk):
+    """
+    This will be turned into a network aggregation template.
+    """
+
+    nodeswalk = networks.from_yaml(netwalk, 'network_aggregations_walk.yaml')
+    nodeswalk = nodeswalk.fillna(0)
+    
+    # new variables
+    print('compute additional aggregation variables')
+    nodeswalk['prop_children_500_walk'] = ((nodeswalk['children_500_walk'] > 0).astype(int) / nodeswalk['hh_500_walk']).fillna(0)
+    nodeswalk['prop_singles_500_walk'] = (nodeswalk['singles_500_walk'] / nodeswalk['hh_500_walk']).fillna(0)
+    nodeswalk['prop_elderly_500_walk'] = (nodeswalk['elderly_hh_500_walk'] / nodeswalk['hh_500_walk']).fillna(0)
+    nodeswalk['prop_black_500_walk'] = (nodeswalk['pop_black_500_walk'] / nodeswalk['pop_500_walk']).fillna(0)
+    nodeswalk['prop_white_500_walk'] = (nodeswalk['pop_white_500_walk'] / nodeswalk['pop_500_walk']).fillna(0)
+    nodeswalk['prop_asian_500_walk'] = (nodeswalk['pop_asian_500_walk'] / nodeswalk['pop_500_walk']).fillna(0)
+    nodeswalk['prop_hisp_500_walk'] = (nodeswalk['pop_hisp_500_walk'] / nodeswalk['pop_500_walk']).fillna(0)
+    nodeswalk['prop_rich_500_walk'] = (nodeswalk['rich_500_walk'] / nodeswalk['pop_500_walk']).fillna(0)
+    nodeswalk['prop_poor_500_walk'] = (nodeswalk['poor_500_walk'] / nodeswalk['pop_500_walk']).fillna(0)
+
+    nodeswalk['prop_children_1500_walk'] = ((nodeswalk['children_1500_walk'] > 0).astype(int)/nodeswalk['hh_1500_walk']).fillna(0)
+    nodeswalk['prop_singles_1500_walk'] = (nodeswalk['singles_1500_walk'] / nodeswalk['hh_1500_walk']).fillna(0)
+    nodeswalk['prop_elderly_1500_walk'] = (nodeswalk['elderly_hh_1500_walk'] / nodeswalk['hh_1500_walk']).fillna(0)
+    nodeswalk['prop_black_1500_walk'] = (nodeswalk['pop_black_1500_walk'] / nodeswalk['pop_1500_walk']).fillna(0)
+    nodeswalk['prop_white_1500_walk'] = (nodeswalk['pop_white_1500_walk'] / nodeswalk['pop_1500_walk']).fillna(0)
+    nodeswalk['prop_asian_1500_walk'] = (nodeswalk['pop_asian_1500_walk'] / nodeswalk['pop_1500_walk']).fillna(0)
+    nodeswalk['prop_hisp_1500_walk'] = (nodeswalk['pop_hisp_1500_walk'] / nodeswalk['pop_1500_walk']).fillna(0)
+    nodeswalk['prop_rich_1500_walk'] = (nodeswalk['rich_1500_walk'] / nodeswalk['pop_1500_walk']).fillna(0)
+    nodeswalk['prop_poor_1500_walk'] = (nodeswalk['poor_1500_walk'] / nodeswalk['pop_1500_walk']).fillna(0)
+
+    nodeswalk['pop_jobs_ratio_1500_walk'] = (nodeswalk['pop_1500_walk'] / (nodeswalk['jobs_500_walk'])).fillna(0)
+    nodeswalk['avg_hhs_500_walk'] = (nodeswalk['pop_500_walk'] / (nodeswalk['hh_500_walk'])).fillna(0)
+    nodeswalk['avg_hhs_1500_walk'] = (nodeswalk['pop_1500_walk'] / (nodeswalk['hh_1500_walk'])).fillna(0)
+    # end of addition
+    
+    # fill inf and nan with median
+    
+    def replace_inf_nan_with_median(col_name):
+        return nodeswalk[col_name].replace([np.inf, -np.inf],np.nan).fillna(nodeswalk[col_name].median)
+    
+    for col_name in ['prop_children_500_walk','prop_singles_500_walk','prop_elderly_500_walk',
+                     'prop_black_500_walk','prop_white_500_walk','prop_asian_500_walk','prop_hisp_500_walk',
+                     'prop_rich_500_walk','prop_poor_500_walk','prop_children_1500_walk','prop_singles_1500_walk',
+                     'prop_elderly_1500_walk','prop_black_1500_walk','prop_white_1500_walk','prop_asian_1500_walk',
+                     'prop_hisp_1500_walk','prop_rich_1500_walk','prop_poor_1500_walk','pop_jobs_ratio_1500_walk',
+                     'avg_hhs_500_walk','avg_hhs_1500_walk']:
+        nodeswalk[col_name] = replace_inf_nan_with_median(col_name)
+    
+    
+    print(nodeswalk.describe())
+    orca.add_table('nodeswalk', nodeswalk)
+
+
+@orca.step()
+def network_aggregations_beam(netbeam):
+    """
+    This will be turned into a network aggregation template.
+    """
+
+    nodesbeam = networks.from_yaml(netbeam, 'network_aggregations_beam.yaml')
+    nodesbeam = nodesbeam.fillna(0)
+    print(nodesbeam.describe())
+    orca.add_table('nodesbeam', nodesbeam)
 
 
 @orca.injectable('output_parameters')
