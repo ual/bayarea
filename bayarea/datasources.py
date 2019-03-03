@@ -8,7 +8,7 @@ import pandas as pd
 
 # Set data directory
 
-d = './data/fake_data_directory'
+d = './data/'
 
 if 'data_directory' in orca.list_injectables():
     d = orca.get_injectable('data_directory')
@@ -16,8 +16,7 @@ if 'data_directory' in orca.list_injectables():
 
 @orca.injectable('store', cache=True)
 def hdfstore():
-    return pd.HDFStore(
-        os.path.join(misc.data_dir(), "model_data.h5"),
+    return pd.HDFStore((d+"model_data.h5"),
         mode='r')
 
 
