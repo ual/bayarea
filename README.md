@@ -11,6 +11,6 @@ virtualenv venv --python=python3
 
 source venv/bin/activate
 
-pip install -r cloud-requirements.txt
+pip install -r test-requirements.txt
 pip install -r requirements.txt
 ``
