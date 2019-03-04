@@ -1,3 +1,10 @@
+altair
+numpy
+orca
+pandana>=0.4.0
+pandas<=0.23.4
+pyyaml
+urbansim
 pytest
 pytest-cov
 python-coveralls
@@ -10,3 +17,8 @@ datashader
 bokeh
 nbconvert
 nbformat
+
+-e ../
+
+git+https://github.com/UDST/choicemodels.git#egg=choicemodels
+git+https://github.com/UDST/urbansim_templates.git#egg=urbansim_templates
