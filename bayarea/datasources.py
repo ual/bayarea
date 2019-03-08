@@ -104,7 +104,7 @@ def edgessmall(store):
 @orca.table('nodesbeam', cache=True)
 def nodesbeam(store):
     df = store['nodesbeam']
-    df.index.name = 'id'
+    df.index.name = 'node_id_beam'
     return df
 
 

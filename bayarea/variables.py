@@ -8,33 +8,57 @@ from variable_generators import generators
 
 from bayarea import datasources
 
-
-@orca.column('households', cache=False)
-def node_id(households, parcels):
-    return misc.reindex(parcels.node_id, households.parcel_id)
-
-
-@orca.column('jobs', cache=False)
-def node_id(jobs, parcels):
-    return misc.reindex(parcels.node_id, jobs.parcel_id)
-
-
-@orca.column('buildings', cache=False)
-def node_id(buildings, parcels):
-    return misc.reindex(parcels.node_id, buildings.parcel_id)
-
-
-@orca.column('buildings', cache=False)
-def ave_annual_rent_sqft_400m(buildings, craigslist, net):
-    net.set(craigslist.node_id, variable = craigslist.rent_sqft)
-    results = net.aggregate(400, type='ave', decay='flat') * 12 #annualize
-    return misc.reindex(results, buildings.node_id)
-
+## BEAM ##
 
 @orca.column('buildings')
 def all_buildings(buildings):
     return pd.Series(np.ones(len(buildings)).astype('int32'), index=buildings.index)
 
+@orca.column('parcels')
+def node_id_beam(parcels, netbeam):
+    idsbeam_parcel = netbeam.get_node_ids(parcels.x, parcels.y)
+    return idsbeam_parcel
+
+
+@orca.column('rentals')
+def node_id_beam(rentals, netbeam):
+    idsbeam_rentals = netbeam.get_node_ids(
+        rentals.longitude, rentals.latitude)
+    return idsbeam_rentals
+
+
+@orca.column('buildings')
+def node_id_beam(parcels, buildings):
+    return misc.reindex(parcels.node_id_beam, buildings.parcel_id)
+
+
+@orca.column('jobs')
+def node_id_beam(buildings, jobs):
+    return misc.reindex(buildings.node_id_beam, jobs.building_id)
+
+## WALK ##
+
+@orca.column('parcels')
+def node_id_walk(parcels, netwalk):
+    idswalk_parcel = netwalk.get_node_ids(parcels.x, parcels.y)
+    return idswalk_parcel
+
+
+@orca.column('rentals')
+def node_id_walk(rentals, netwalk):
+    idswalk_rentals = netwalk.get_node_ids(
+        rentals.longitude, rentals.latitude)
+    return idswalk_rentals
+
+
+@orca.column('buildings')
+def node_id_walk(parcels, buildings):
+    return misc.reindex(parcels.node_id_walk, buildings.parcel_id)
+
+
+@orca.column('jobs')
+def node_id_walk(buildings, jobs):
+    return misc.reindex(buildings.node_id_walk, jobs.building_id)
 
 # ~ def agg_var_building_type(geography, geography_id, var, buildingtype):
 

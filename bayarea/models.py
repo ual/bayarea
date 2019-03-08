@@ -36,26 +36,26 @@ from urbansim.utils import networks
     # ~ orca.add_table('craigslist', craigslist)
 
 
-@orca.step()
-def initialize_network_small():
-    """
-    This will be turned into a data loading template.
-    """
-
-    @orca.injectable('netsmall', cache=True)
-    def build_networksmall(parcels, craigslist, nodessmall, edgessmall):
-        netsmall = pdna.Network(nodessmall.x, nodessmall.y, edgessmall.u,
-                                 edgessmall.v, edgessmall[['length']], twoway=True)
-        netsmall.precompute(25000)
-        
-        parcels = parcels.local
-        parcels['node_id_small'] = netsmall.get_node_ids(parcels['x'], parcels['y'])
-        orca.add_table("parcels", parcels)
-        orca.add_injectable("netsmall", netsmall)
-
-        craigslist = craigslist.local
-        craigslist['node_id_small'] = netsmall.get_node_ids(craigslist['longitude'], craigslist['latitude'])
-        orca.add_table('craigslist', craigslist)
+# @orca.step()
+# def initialize_network_small():
+#     """
+#     This will be turned into a data loading template.
+#     """
+#
+#     @orca.injectable('netsmall', cache=True)
+#     def build_networksmall(parcels, craigslist, nodessmall, edgessmall):
+#         netsmall = pdna.Network(nodessmall.x, nodessmall.y, edgessmall.u,
+#                                  edgessmall.v, edgessmall[['length']], twoway=True)
+#         netsmall.precompute(25000)
+#
+#         parcels = parcels.local
+#         parcels['node_id_small'] = netsmall.get_node_ids(parcels['x'], parcels['y'])
+#         orca.add_table("parcels", parcels)
+#         orca.add_injectable("netsmall", netsmall)
+#
+#         craigslist = craigslist.local
+#         craigslist['node_id_small'] = netsmall.get_node_ids(craigslist['longitude'], craigslist['latitude'])
+#         orca.add_table('craigslist', craigslist)
 
 
 @orca.step()
@@ -69,15 +69,16 @@ def initialize_network_walk():
         netwalk = pdna.Network(nodessmall.x, nodessmall.y, edgessmall.u,
                                  edgessmall.v, edgessmall[['length']], twoway=True)
         netwalk.precompute(5000)
+        return netwalk
         
-        parcels = parcels.local
-        parcels['node_id_walk'] = netwalk.get_node_ids(parcels['x'], parcels['y'])
-        orca.add_table("parcels", parcels)
-        orca.add_injectable("netwalk", netwalk)
-
-        craigslist = craigslist.local
-        craigslist['node_id_walk'] = netwalk.get_node_ids(craigslist['longitude'], craigslist['latitude'])
-        orca.add_table('craigslist', craigslist)
+        # parcels = parcels.local
+        # parcels['node_id_walk'] = netwalk.get_node_ids(parcels['x'], parcels['y'])
+        # orca.add_table("parcels", parcels)
+        # orca.add_injectable("netwalk", netwalk)
+        #
+        # craigslist = craigslist.local
+        # craigslist['node_id_walk'] = netwalk.get_node_ids(craigslist['longitude'], craigslist['latitude'])
+        # orca.add_table('craigslist', craigslist)
 
 
 
@@ -100,16 +101,16 @@ def initialize_network_beam(parcels, craigslist):
             nodesbeam['lon'], nodesbeam['lat'], edgesbeam['from'],
             edgesbeam['to'], edgesbeam[['traveltime']], twoway=False)
         netbeam.precompute(1000)
-        #return netbeam
+        return netbeam
         
-        parcels = parcels.local
-        parcels['node_id_beam'] = netbeam.get_node_ids(parcels['x'], parcels['y'])
-        orca.add_table("parcels", parcels)
-        orca.add_injectable("netbeam", netbeam)
-
-        craigslist = craigslist.local
-        craigslist['node_id_beam'] = netbeam.get_node_ids(craigslist['longitude'], craigslist['latitude'])
-        orca.add_table('craigslist', craigslist)
+        # parcels = parcels.local
+        # parcels['node_id_beam'] = netbeam.get_node_ids(parcels['x'], parcels['y'])
+        # orca.add_table("parcels", parcels)
+        # orca.add_injectable("netbeam", netbeam)
+        #
+        # craigslist = craigslist.local
+        # craigslist['node_id_beam'] = netbeam.get_node_ids(craigslist['longitude'], craigslist['latitude'])
+        # orca.add_table('craigslist', craigslist)
 
 @orca.step()
 def network_aggregations_small(netsmall):
