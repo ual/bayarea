@@ -100,7 +100,7 @@ def nodeswalk(store):
 
 
 @orca.table('edgeswalk', cache=True)
-def edgessmall(store):
+def edgeswalk(store):
     df = store['edgeswalk']
     return df
 
