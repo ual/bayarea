@@ -1,0 +1,15 @@
+name: network_aggregations
+
+desc: Network aggregations
+
+model_type: networks
+
+node_col: node_id_walk
+
+variable_definitions:
+
+  - name: jobs_1500_walk
+    dataframe: jobs
+    radius: 1500
+    decay: flat
+

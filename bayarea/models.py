@@ -12,50 +12,55 @@ from developer import proposal_select
 from collections import OrderedDict
 from urbansim.utils import networks
 
-# ~ @orca.step()
-# ~ def build_networks(parcels, nodes, edges, craigslist):
-    # ~ nodes, edges = nodes.to_frame(), edges.to_frame()
-    # ~ print('Number of nodes is %s.' % len(nodes))
-    # ~ print('Number of edges is %s.' % len(edges))
-    # ~ net = pdna.Network(nodes["x"], nodes["y"], edges["from"], edges["to"],
-                           # ~ edges[["weight"]])
+# @orca.step()
+# def build_networks(parcels, nodes, edges, craigslist):
+    # nodes, edges = nodeswalk.to_frame(), edgeswalk.to_frame()
+    # print('Number of nodes is %s.' % len(nodes))
+    # print('Number of edges is %s.' % len(edges))
+    # net = pdna.Network(nodes["x"], nodes["y"], edges["from"], edges["to"],
+                           # edges[["weight"]])
 
-    # ~ precompute_distance = 5000
-    # ~ print('Precomputing network for distance %s.' % precompute_distance)
-    # ~ print('Network precompute starting.')
-    # ~ net.precompute(precompute_distance)
-    # ~ print('Network precompute done.')
+    # precompute_distance = 5000
+    # print('Precomputing network for distance %s.' % precompute_distance)
+    # print('Network precompute starting.')
+    # net.precompute(precompute_distance)
+    # print('Network precompute done.')
 
-    # ~ parcels = parcels.local
-    # ~ parcels['node_id'] = net.get_node_ids(parcels['x'], parcels['y'])
-    # ~ orca.add_table("parcels", parcels)
-    # ~ orca.add_injectable("net", net)
+    # parcels = parcels.local
+    # parcels['node_id'] = net.get_node_ids(parcels['x'], parcels['y'])
+    # orca.add_table("parcels", parcels)
+    # orca.add_injectable("net", net)
 
-    # ~ craigslist = craigslist.local
-    # ~ craigslist['node_id'] = net.get_node_ids(craigslist['longitude'], craigslist['latitude'])
-    # ~ orca.add_table('craigslist', craigslist)
+    # craigslist = craigslist.local
+    # craigslist['node_id'] = net.get_node_ids(craigslist['longitude'], craigslist['latitude'])
+    # orca.add_table('craigslist', craigslist)
 
 
 # @orca.step()
-# def initialize_network_small():
-#     """
-#     This will be turned into a data loading template.
-#     """
-#
-#     @orca.injectable('netsmall', cache=True)
-#     def build_networksmall(parcels, craigslist, nodessmall, edgessmall):
-#         netsmall = pdna.Network(nodessmall.x, nodessmall.y, edgessmall.u,
-#                                  edgessmall.v, edgessmall[['length']], twoway=True)
-#         netsmall.precompute(25000)
-#
-#         parcels = parcels.local
-#         parcels['node_id_small'] = netsmall.get_node_ids(parcels['x'], parcels['y'])
-#         orca.add_table("parcels", parcels)
-#         orca.add_injectable("netsmall", netsmall)
-#
-#         craigslist = craigslist.local
-#         craigslist['node_id_small'] = netsmall.get_node_ids(craigslist['longitude'], craigslist['latitude'])
-#         orca.add_table('craigslist', craigslist)
+# def build_networks(parcels, nodeswalk, edgeswalk, craigslist):
+    # nodes, edges = nodeswalk.to_frame(), edgeswalk.to_frame()
+    # print('Number of nodes is %s.' % len(nodes))
+    # print('Number of edges is %s.' % len(edges))
+    # net = pdna.Network(nodes["x"], nodes["y"], edges["u"], edges["v"],
+                           # edges[["length"]])
+
+    # precompute_distance = 5000
+    # print('Precomputing network for distance %s.' % precompute_distance)
+    # print('Network precompute starting.')
+    # net.precompute(precompute_distance)
+    # print('Network precompute done.')
+    
+    # return net
+
+    # parcels = parcels.local
+    # parcels['node_id'] = net.get_node_ids(parcels['x'], parcels['y'])
+    # orca.add_table("parcels", parcels)
+    # orca.add_injectable("net", net)
+
+    # craigslist = craigslist.local
+    # craigslist['node_id'] = net.get_node_ids(craigslist['longitude'], craigslist['latitude'])
+    # orca.add_table('craigslist', craigslist)
+
 
 
 @orca.step()
@@ -64,78 +69,36 @@ def initialize_network_walk():
     This will be turned into a data loading template.
     """
 
-    @orca.injectable('netwalk', cache=False)
-    def build_networkwalk(parcels, craigslist, nodeswalk, edgeswalk):
-        netwalk = pdna.Network(nodessmall.x, nodessmall.y, edgessmall.u,
-                                 edgessmall.v, edgessmall[['length']], twoway=True)
+    @orca.injectable('netwalk', cache=True)
+    def build_networkwalk(nodeswalk, edgeswalk):
+        nodeswalk, edgeswalk = nodeswalk.to_frame(), edgeswalk.to_frame()
+        print('Number of nodes is %s.' % len(nodeswalk))
+        print('Number of edges is %s.' % len(edgeswalk))
+        netwalk = pdna.Network(
+            nodeswalk.x, nodeswalk.y, edgeswalk.u,edgeswalk.v, 
+            edgeswalk[['length']], twoway=True)
         netwalk.precompute(5000)
         return netwalk
         
-        # parcels = parcels.local
-        # parcels['node_id_walk'] = netwalk.get_node_ids(parcels['x'], parcels['y'])
-        # orca.add_table("parcels", parcels)
-        # orca.add_injectable("netwalk", netwalk)
-        #
-        # craigslist = craigslist.local
-        # craigslist['node_id_walk'] = netwalk.get_node_ids(craigslist['longitude'], craigslist['latitude'])
-        # orca.add_table('craigslist', craigslist)
-
 
 
 @orca.step()
-def initialize_network_beam(parcels, craigslist):
+def initialize_network_beam():
     """
     This will be turned into a data loading template.
     """
 
     @orca.injectable('netbeam', cache=True)
-    def build_networkbeam(nodesbeam, edgesbeam, parcels, craigslist):
+    def build_networkbeam(nodesbeam, edgesbeam):
         nodesbeam, edgesbeam = nodesbeam.to_frame(), edgesbeam.to_frame()
         print('Number of nodes is %s.' % len(nodesbeam))
         print('Number of edges is %s.' % len(edgesbeam))
-        #nodesbeam = orca.get_table('nodesbeam',nodesbeam).local
-        #edgesbeam = orca.get_table('edgeswalk',edgeswalk).local
-        #edgesbeam = edgesbeam[
-        #    (edgesbeam['hour'] == 8) & (edgesbeam['stat'] == 'AVG')]
         netbeam = pdna.Network(
             nodesbeam['lon'], nodesbeam['lat'], edgesbeam['from'],
             edgesbeam['to'], edgesbeam[['traveltime']], twoway=False)
-        netbeam.precompute(1000)
+        netbeam.precompute(3600)
         return netbeam
         
-        # parcels = parcels.local
-        # parcels['node_id_beam'] = netbeam.get_node_ids(parcels['x'], parcels['y'])
-        # orca.add_table("parcels", parcels)
-        # orca.add_injectable("netbeam", netbeam)
-        #
-        # craigslist = craigslist.local
-        # craigslist['node_id_beam'] = netbeam.get_node_ids(craigslist['longitude'], craigslist['latitude'])
-        # orca.add_table('craigslist', craigslist)
-
-@orca.step()
-def network_aggregations_small(netsmall):
-    """
-    This will be turned into a network aggregation template.
-    """
-    nodessmall = networks.from_yaml(
-        netsmall, 'network_aggregations_small.yaml')
-    nodessmall = nodessmall.fillna(0)
-    
-    # new variables
-    print('compute additional aggregation variables')
-    nodessmall['pop_jobs_ratio_10000'] = (nodessmall['pop_10000'] / (nodessmall['jobs_10000'])).fillna(0)
-    nodessmall['pop_jobs_ratio_25000'] = (nodessmall['pop_25000'] / (nodessmall['jobs_25000'])).fillna(0)
-    # fill inf and nan with median
-    nodessmall['pop_jobs_ratio_10000'] = nodessmall['pop_jobs_ratio_10000'].replace([np.inf, -np.inf], np.nan).fillna(
-        nodessmall['pop_jobs_ratio_10000'].median)
-    nodessmall['pop_jobs_ratio_25000'] = nodessmall['pop_jobs_ratio_25000'].replace([np.inf, -np.inf], np.nan).fillna(
-        nodessmall['pop_jobs_ratio_25000'].median)
-    
-    # end of addition
-    
-    print(nodessmall.describe())
-    orca.add_table('nodessmall', nodessmall)
-
 
 @orca.step()
 def network_aggregations_walk(netwalk):
