@@ -85,10 +85,12 @@ nodessmall = pd.read_csv(
 edgessmall = pd.read_csv(
     d + 'bay_area_tertiary_strongly_edges.csv').set_index('uniqueid')
 
+skims = pd.read_csv('./data/skims_110118.csv', index_col=0)
+
 for table_str in [
         'parcels', 'buildings', 'building_types', 'units', 'rentals',
         'households', 'persons', 'jobs', 'establishments', 'nodesbeam',
-        'edgesbeam',
-        'nodeswalk', 'edgeswalk', 'nodessmall', 'edgessmall']:
+        'edgesbeam', 'nodeswalk', 'edgeswalk', 'nodessmall', 'edgessmall',
+        'skims']:
     print(table_str)
     send_df_to_s3_as_pq(eval(table_str), table_str)

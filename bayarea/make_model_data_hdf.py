@@ -4,8 +4,8 @@ import subprocess
 from subprocess import PIPE
 
 
-d = './data/'
-b = 'data/beam_to_urbansim-v3/'
+d = '/home/data/fall_2018/'
+b = '/home/data/spring_2019/beam_to_urbansim-v3/'
 
 parcels = pd.read_csv(
     d + 'parcel_attr.csv',
@@ -77,6 +77,8 @@ edgeswalk = pd.read_csv(d + 'bayarea_walk_edges.csv').set_index('uniqueid')
 nodessmall = pd.read_csv(d + 'bay_area_tertiary_strongly_nodes.csv').set_index('osmid')
 edgessmall = pd.read_csv(d + 'bay_area_tertiary_strongly_edges.csv').set_index('uniqueid')
 
+skims = pd.read_csv(d + 'skims_110118.csv', index_col=0)
+
 store = pd.HDFStore('data/model_data.h5')
 store.put('parcels',parcels)
 store.put('buildings',buildings)
@@ -93,7 +95,7 @@ store.put('nodeswalk',nodeswalk)
 store.put('edgeswalk',edgeswalk)
 store.put('nodessmall',nodessmall)
 store.put('edgessmall',edgessmall)
+store.put('skims', skims)
 store.keys()
 
 store.close()
-
